@@ -6,38 +6,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>24 News — Free Website Template, Free HTML5 Template by FreeHTML5.co</title>
-    <link href="css/media_query.css" rel="stylesheet" type="text/css"/>
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('index/css/media_query.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('index/css/bootstrap.css')}}" rel="stylesheet" type="text/css"/>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="css/animate.css" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('index/css/animate.css')}}" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <link href="css/owl.carousel.css" rel="stylesheet" type="text/css"/>
-    <link href="css/owl.theme.default.css" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('index/css/owl.carousel.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('index/css/owl.theme.default.css')}}" rel="stylesheet" type="text/css"/>
     <!-- Bootstrap CSS -->
-    <link href="css/style_1.css" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('index/css/style_1.css')}}" rel="stylesheet" type="text/css"/>
     <!-- Modernizr JS -->
     <script src="js/modernizr-3.5.0.min.js"></script>
 </head>
 <body>
-<div class="container-fluid fh5co_header_bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 fh5co_mediya_center"><a href="#" class="color_fff fh5co_mediya_setting"><i
-                    class="fa fa-clock-o"></i>&nbsp;&nbsp;&nbsp;Friday, 5 January 2018</a>
-                <div class="d-inline-block fh5co_trading_posotion_relative"><a href="#" class="treding_btn">Trending</a>
-                    <div class="fh5co_treding_position_absolute"></div>
-                </div>
-                <a href="#" class="color_fff fh5co_mediya_setting">Instagram’s big redesign goes live with black-and-white app</a>
-            </div>
-        </div>
-    </div>
-</div>
+
 <div class="container-fluid">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-3 fh5co_padding_menu">
-                <img src="images/logo.png" alt="img" class="fh5co_logo_width"/>
+                <img src="{{asset('index/images/logo.png')}}" alt="img" class="fh5co_logo_width"/>
             </div>
             <div class="col-12 col-md-9 align-self-center fh5co_mediya_right">
                 <div class="text-center d-inline-block">
@@ -106,7 +94,7 @@
                         </div>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="Contact_us.html">Contact <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">Contact <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
@@ -116,29 +104,29 @@
 <div class="container-fluid paddding mb-5">
     <div class="row mx-0">
         <div class="col-md-6 col-12 paddding animate-box" data-animate-effect="fadeIn">
-            <div class="fh5co_suceefh5co_height"><img src="images/nick-karvounis-78711.jpg" alt="img"/>
+            <div class="fh5co_suceefh5co_height"><img src="{{asset('index/images/nick-karvounis-78711.jpg')}}" alt="img"/>
                 <div class="fh5co_suceefh5co_height_position_absolute"></div>
                 <div class="fh5co_suceefh5co_height_position_absolute_font">
                     <div class=""><a href="#" class="color_fff"> <i class="fa fa-clock-o"></i>&nbsp;&nbsp;Dec 31,2017
                     </a></div>
-                    <div class=""><a href="single.html" class="fh5co_good_font"> After all is said and done, more is said than done </a></div>
+                    <div class=""><a href="#" class="fh5co_good_font"> After all is said and done, more is said than done </a></div>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
             <div class="row">
                 <div class="col-md-6 col-6 paddding animate-box" data-animate-effect="fadeIn">
-                    <div class="fh5co_suceefh5co_height_2"><img src="images/science-578x362.jpg" alt="img"/>
+                    <div class="fh5co_suceefh5co_height_2"><img src="{{asset('index/images/science-578x362.jpg')}}" alt="img"/>
                         <div class="fh5co_suceefh5co_height_position_absolute"></div>
                         <div class="fh5co_suceefh5co_height_position_absolute_font_2">
                             <div class=""><a href="#" class="color_fff"> <i class="fa fa-clock-o"></i>&nbsp;&nbsp;Oct
                                 28,2017 </a></div>
-                            <div class=""><a href="single.html" class="fh5co_good_font_2"> After all is said and done, <br>more is said than done </a></div>
+                            <div class=""><a href="#" class="fh5co_good_font_2"> After all is said and done, <br>more is said than done </a></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-6 paddding animate-box" data-animate-effect="fadeIn">
-                    <div class="fh5co_suceefh5co_height_2"><img src="images/joe-gardner-75333.jpg" alt="img"/>
+                    <div class="fh5co_suceefh5co_height_2"><img src="{{asset('index/images/joe-gardner-75333.jpg')}}" alt="img"/>
                         <div class="fh5co_suceefh5co_height_position_absolute"></div>
                         <div class="fh5co_suceefh5co_height_position_absolute_font_2">
                             <div class=""><a href="#" class="color_fff"> <i class="fa fa-clock-o"></i>&nbsp;&nbsp;Oct 28,2017 </a></div>
@@ -147,22 +135,22 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-6 paddding animate-box" data-animate-effect="fadeIn">
-                    <div class="fh5co_suceefh5co_height_2"><img src="images/ryan-moreno-98837.jpg" alt="img"/>
+                    <div class="fh5co_suceefh5co_height_2"><img src="{{asset('index/images/ryan-moreno-98837.jpg')}}" alt="img"/>
                         <div class="fh5co_suceefh5co_height_position_absolute"></div>
                         <div class="fh5co_suceefh5co_height_position_absolute_font_2">
                             <div class=""><a href="#" class="color_fff"> <i class="fa fa-clock-o"></i>&nbsp;&nbsp;Oct
                                 28,2017 </a></div>
-                            <div class=""><a href="single.html" class="fh5co_good_font_2"> After all is said and done, more is said than done </a></div>
+                            <div class=""><a href="#" class="fh5co_good_font_2"> After all is said and done, more is said than done </a></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-6 paddding animate-box" data-animate-effect="fadeIn">
-                    <div class="fh5co_suceefh5co_height_2"><img src="images/10-1-1-875x500.jpg" alt="img"/>
+                    <div class="fh5co_suceefh5co_height_2"><img src="{{asset('index/images/10-1-1-875x500.jpg')}}" alt="img"/>
                         <div class="fh5co_suceefh5co_height_position_absolute"></div>
                         <div class="fh5co_suceefh5co_height_position_absolute_font_2">
                             <div class=""><a href="#" class="color_fff"> <i class="fa fa-clock-o"></i>&nbsp;&nbsp;Oct
                                 28,2017 </a></div>
-                            <div class=""><a href="single.html" class="fh5co_good_font_2"> After all is said and done, more is said... </a></div>
+                            <div class=""><a href="#" class="fh5co_good_font_2"> After all is said and done, more is said... </a></div>
                         </div>
                     </div>
                 </div>
@@ -178,7 +166,7 @@
         <div class="owl-carousel owl-theme js" id="slider1">
             <div class="item px-2">
                 <div class="fh5co_latest_trading_img_position_relative">
-                    <div class="fh5co_latest_trading_img"><img src="images/allef-vinicius-108153.jpg" alt=""
+                    <div class="fh5co_latest_trading_img"><img src="{{asset('index/images/allef-vinicius-108153.jpg')}}" alt=""
                                                            class="fh5co_img_special_relative"/></div>
                     <div class="fh5co_latest_trading_img_position_absolute"></div>
                     <div class="fh5co_latest_trading_img_position_absolute_1">
@@ -616,7 +604,7 @@
 <div class="container-fluid fh5co_footer_right_reserved">
     <div class="container">
         <div class="row  ">
-            <div class="col-12 col-md-6 py-4 Reserved"> © Copyright 2018, All rights reserved. Design by <a href="https://freehtml5.co" title="Free HTML5 Bootstrap templates">FreeHTML5.co</a>. </div>
+            <div class="col-12 col-md-6 py-4 Reserved"> © Copyright 2018, All rights reserved. Design by <a href="#" title="Free HTML5 Bootstrap templates">FreeHTML5.co</a>. </div>
             <div class="col-12 col-md-6 spdp_right py-4">
                 <a href="#" class="footer_last_part_menu">Home</a>
                 <a href="Contact_us.html" class="footer_last_part_menu">About</a>
