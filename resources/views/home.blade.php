@@ -38,12 +38,11 @@
                     <a class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-google-plus"></i></div></a>
                 </div>
                 <div class="text-center d-inline-block">
-                    <a href="https://twitter.com/fh5co" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-twitter"></i></div></a>
+                    <a href="#" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-twitter"></i></div></a>
                 </div>
                 <div class="text-center d-inline-block">
-                    <a href="https://fb.com/fh5co" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div></a>
+                    <a href="#" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div></a>
                 </div>
-                <!--<div class="d-inline-block text-center"><img src="images/country.png" alt="img" class="fh5co_country_width"/></div>-->
                 <div class="d-inline-block text-center dd_position_relative ">
                     <select class="form-control fh5co_text_select_option">
                         <option>English </option>
@@ -67,13 +66,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="blog.html">Blog <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">Blog <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="single.html">Single <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">Single <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
@@ -575,19 +574,19 @@
                 <a href="#" class="footer_post pb-4"> Success is not a good teacher failure makes you humble </a>
                 <div class="footer_makes_sub_font"> Dec 31, 2016</div>
                 <a href="#" class="footer_post pb-4"> Success is not a good teacher failure makes you humble </a>
-                <div class="footer_position_absolute"><img src="images/footer_sub_tipik.png" alt="img" class="width_footer_sub_img"/></div>
+                <div class="footer_position_absolute"><img src="{{asset('index/images/footer_sub_tipik.png')}}" alt="img" class="width_footer_sub_img"/></div>
             </div>
             <div class="col-12 col-md-12 col-lg-4 ">
                 <div class="footer_main_title py-3"> Last Modified Posts</div>
-                <a href="#" class="footer_img_post_6"><img src="images/allef-vinicius-108153.jpg" alt="img"/></a>
-                <a href="#" class="footer_img_post_6"><img src="images/32-450x260.jpg" alt="img"/></a>
-                <a href="#" class="footer_img_post_6"><img src="images/download (1).jpg" alt="img"/></a>
-                <a href="#" class="footer_img_post_6"><img src="images/science-578x362.jpg" alt="img"/></a>
-                <a href="#" class="footer_img_post_6"><img src="images/vil-son-35490.jpg" alt="img"/></a>
-                <a href="#" class="footer_img_post_6"><img src="images/zack-minor-15104.jpg" alt="img"/></a>
-                <a href="#" class="footer_img_post_6"><img src="images/download.jpg" alt="img"/></a>
-                <a href="#" class="footer_img_post_6"><img src="images/download (2).jpg" alt="img"/></a>
-                <a href="#" class="footer_img_post_6"><img src="images/ryan-moreno-98837.jpg" alt="img"/></a>
+                <a href="#" class="footer_img_post_6"><img src="{{asset('index/images/allef-vinicius-108153.jpg')}}" alt="img"/></a>
+                <a href="#" class="footer_img_post_6"><img src="{{asset('index/images/32-450x260.jpg')}}" alt="img"/></a>
+                <a href="#" class="footer_img_post_6"><img src="{{asset('index/images/download (1).jpg')}}" alt="img"/></a>
+                <a href="#" class="footer_img_post_6"><img src="{{asset('index/images/science-578x362.jpg')}}" alt="img"/></a>
+                <a href="#" class="footer_img_post_6"><img src="{{asset('index/images/vil-son-35490.jpg')}}" alt="img"/></a>
+                <a href="#" class="footer_img_post_6"><img src="{{asset('index/images/zack-minor-15104.jpg')}}" alt="img"/></a>
+                <a href="#" class="footer_img_post_6"><img src="{{asset('index/images/download.jpg')}}" alt="img"/></a>
+                <a href="#" class="footer_img_post_6"><img src="{{asset('index/images/download (2).jpg')}}" alt="img"/></a>
+                <a href="#" class="footer_img_post_6"><img src="{{asset('index/images/ryan-moreno-98837.jpg')}}" alt="img"/></a>
             </div>
         </div>
         <div class="row justify-content-center pt-2 pb-4">
