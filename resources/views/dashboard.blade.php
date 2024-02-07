@@ -33,7 +33,7 @@
               <span class="hide-menu">Home</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./index.html" aria-expanded="false">
+              <a class="sidebar-link" href="#" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
@@ -350,7 +350,7 @@
           <div class="col-lg-8 d-flex align-items-stretch">
             <div class="card w-100">
               <div class="card-body p-4 ">
-                <h5 class="card-title fw-semibold mb-4">Users</h5>
+                <h5 class="card-title fw-semibold mb-4">Role</h5>
                 <div class="table-responsive">
                   <table class="table text-nowrap mb-0 align-middle">
                     <thead class="text-dark fs-4">
@@ -359,7 +359,7 @@
                           <h6 class="fw-semibold mb-0">Id</h6>
                         </th>
                         <th class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0">Email</h6>
+                          <h6 class="fw-semibold mb-0">Role</h6>
                         </th>
 
                         <th class="border-bottom-0">
@@ -375,11 +375,11 @@
                         <td class="border-bottom-0"><h6 class="fw-semibold mb-0">1</h6></td>
 
                         <td class="border-bottom-0">
-                          <p class="mb-0 fw-normal">Elite Admin</p>
+                          <p class="mb-0 fw-normal">Admin</p>
                         </td>
                         <td class="border-bottom-0">
-                          <div class="d-flex align-items-center gap-2">
-                            <span class="badge bg-primary rounded-3 fw-semibold">Send</span>
+                          <div class="d-flex align-items-center  gap-2">
+                            <input type="checkbox">
                           </div>
                         </td>
                         <td class="border-bottom-0">
@@ -390,7 +390,7 @@
                         <td class="border-bottom-0"><h6 class="fw-semibold mb-0">2</h6></td>
 
                         <td class="border-bottom-0">
-                          <p class="mb-0 fw-normal">Real Homes WP Theme</p>
+                          <p class="mb-0 fw-normal">Reditor</p>
                         </td>
                         <td class="border-bottom-0">
                           <div class="d-flex align-items-center gap-2">
