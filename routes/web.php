@@ -21,3 +21,6 @@ Route::get(
     function () {
         return view('home');
 });
+Route::get('/signin' ,function (){
+    return view('Auth/signin');
+});
