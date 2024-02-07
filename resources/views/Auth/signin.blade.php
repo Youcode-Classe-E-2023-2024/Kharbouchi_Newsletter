@@ -151,28 +151,67 @@ a.socialIcon:hover,
 </head>
 <body>
 
-    <div class="container"> 
-        <div class="row"> 
-            <div class="col-md-6"> 
-                <div class="card"> 
-                    <form onsubmit="event.preventDefault()" class="box"> 
-                        <h1>Login</h1> 
-                        <p class="text-muted"> Please enter your login and password!</p> 
-                        <input type="text" name="" placeholder="Username"> 
-                        <input type="password" name="" placeholder="Password"> 
-                        <a class="forgot text-muted" href="#">Forgot password?</a> 
-                        <input type="submit" name="" value="Login" href="#"> 
-                        <div class="col-md-12"> <ul class="social-network social-circle"> 
-                            <li><a href="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook-f"></i></a></li> 
-                            <li><a href="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter"></i></a></li> 
-                            <li><a href="#" class="icoGoogle" title="Google +"><i class="fab fa-google-plus"></i></a></li> 
-                        </ul> 
-                    </div> 
-                </form> 
-            </div> 
-        </div> 
+    <div class ="row">
+        <div class="col-md-6 mx-auto p-0">
+            <div class="card">
+    <div class="login-box">
+        <div class="login-snip">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+            <div class="login-space">
+                <div class="login">
+                    <div class="group">
+                        <label for="user" class="label">Username</label>
+                        <input id="user" type="text" class="input"  placeholder="Enter your username">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Password</label>
+                        <input id="pass" type="password" class="input" data-type="password" placeholder="Enter your password">
+                    </div>
+                    <div class="group">
+                        <input id="check" type="checkbox" class="check" checked>
+                        <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Sign In">
+                    </div>
+                    <div class="hr"></div>
+                    <div class="foot">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </div>
+                <div class="sign-up-form">
+                    <div class="group">
+                        <label for="user" class="label">Username</label>
+                        <input id="user" type="text" class="input" placeholder="Create your Username">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Password</label>
+                        <input id="pass" type="password" class="input" data-type="password" placeholder="Create your password">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Repeat Password</label>
+                        <input id="pass" type="password" class="input" data-type="password" placeholder="Repeat your password" >
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Email Address</label>
+                        <input id="pass" type="text" class="input" placeholder="Enter your email address">
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Sign Up">
+                    </div>
+                    <div class="hr"></div>
+                    <div class="foot">
+                        <label for="tab-1">Already Member?</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
     </div>
-</div>
+    </div>
+    </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
