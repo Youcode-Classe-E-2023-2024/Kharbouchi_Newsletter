@@ -24,3 +24,6 @@ Route::get(
 Route::get('/login' ,function (){
     return view('Auth/signin');
 });
+Route::get('/admin' ,function (){
+    return view('dashboard');
+});
