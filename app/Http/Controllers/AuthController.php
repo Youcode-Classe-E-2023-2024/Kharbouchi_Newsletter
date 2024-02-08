@@ -8,17 +8,23 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    public function resetAdminPassword()
-    {
-        $user = User::where('email', 'admin@example.com')->first(); // Utilisez l'adresse e-mail réelle de l'admin
-        if ($user) {
-            $user->password = Hash::make('nouveau_mot_de_passe'); // Définissez le nouveau mot de passe
-            $user->save();
-            return "Le mot de passe de l'administrateur a été réinitialisé avec succès.";
-        } else {
-            return "L'utilisateur administrateur n'a pas été trouvé.";
-        }
+    public function register(){
+        return view('auth/register');
     }
+public function registerPost(Request $request)
+{
+
+
+    $user = new User();
+    
+    $user->name = $request->name;
+    $user->email = $request->email;
+    $user->password = Hash::make($request->password);
+    
+    $user->save();
+    return back()->with('succes','Register successfully');
+
+}
 
     public function signin(){
         return view('Auth/signin');

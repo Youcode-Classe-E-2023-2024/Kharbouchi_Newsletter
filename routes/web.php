@@ -22,6 +22,10 @@ Route::get(
     function () {
         return view('home');
 });
+Route::controller(authController::class)->group(function (){
+    Route::get('register','register')->name('register');
+});
+Route::post('/register',[authController::class,'registerPost'])->name('register');
 Route::get('/login', [AuthController::class, 'signin'])->name('signin.form');
 Route::post('/login', [AuthController::class, 'signinPost'])->name('signin');
 Route::get('/dashboard', function () {
@@ -30,5 +34,4 @@ Route::get('/dashboard', function () {
     }
     return view('dashboard');
 })->name('dashboard');
-Route::get('/reset-admin-password', [AuthController::class, 'resetAdminPassword']);
 
