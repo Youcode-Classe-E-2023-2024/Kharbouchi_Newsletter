@@ -24,6 +24,9 @@ Route::get(
 });
 Route::get('/login', [AuthController::class, 'signin'])->name('signin.form');
 Route::post('/login', [AuthController::class, 'signinPost'])->name('signin');
-Route::get('/admin' ,function (){
+Route::get('/dashboard', function () {
+    if (!Auth::check()) {
+        return redirect('/login');
+    }
     return view('dashboard');
-});
+})->name('dashboard');
