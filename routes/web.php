@@ -27,5 +27,5 @@ Route::get('/admin' ,function (){
     return view('dashboard');
 });
 Route::get('/forget_password', function () {
-        return view('Auth/forget_pas');
+        return view('Auth/forgotPassword');
 });
