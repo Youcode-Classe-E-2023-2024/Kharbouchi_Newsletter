@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('email', function (Blueprint $table) {
-            $table->id();
-            $table->id('User_id');
-            $table->string('Email_title');
-            $table->string('Email_content');
-            $table->id('Description');
-            $table->timestamps('send_at');
-            $table->timestamps();
+        Schema::create('emails', function (Blueprint $table) {
+            $table->id(); // Primary key
+            $table->unsignedBigInteger('user_id'); // Assuming a foreign key to a 'users' table
+            $table->string('email_title');
+            $table->string('email_content'); // Changed to 'text' type for longer content
+            $table->text('description'); // Assuming this was meant to be a text field
+            $table->timestamp('send_at')->nullable(); // Correctly defining a nullable timestamp for 'send_at'
+            $table->timestamps(); // Automatically adds 'created_at' and 'updated_at' columns
         });
     }
 

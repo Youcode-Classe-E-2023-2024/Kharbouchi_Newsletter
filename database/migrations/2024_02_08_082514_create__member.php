@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('_member', function (Blueprint $table) {
+        Schema::create('members', function (Blueprint $table) {
             $table->id();
-            $table->string('Email');
-            $table->boolean('subscribe')->default(false);
+            $table->string('email'); // It's a common practice to use snake_case for database column names in Laravel.
+            $table->boolean('subscribe')->default(false); // Added a default value (false) for the 'subscribe' column.
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('_member');
+        Schema::dropIfExists('members');
     }
 };
