@@ -8,24 +8,23 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    public function register(){
+    public function showRegistrationForm(){
         return view('auth/register');
     }
-public function registerPost(Request $request)
-{
-
-
-    $user = new User();
-    
-    $user->name = $request->name;
-    $user->email = $request->email;
-    $user->password = Hash::make($request->password);
-    
-    $user->save();
-    return back()->with('succes','Register successfully');
-
-}
-
+    public function register(Request $request)
+    {
+        $user = new User();
+        
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->Role = 'user'; // Set the default role for new users
+        
+        $user->save();
+        return back()->with('success','Registered successfully');
+    }
+            
+            
     public function signin(){
         return view('Auth/signin');
     }
@@ -37,7 +36,7 @@ public function registerPost(Request $request)
         ];
     
         if (Auth::attempt($data)) {
-            return redirect('/dashboard')->with('success', 'Good job');
+            return redirect('/admin')->with('success', 'Good job');
         }
     
         return back()->with('error', 'Imad');

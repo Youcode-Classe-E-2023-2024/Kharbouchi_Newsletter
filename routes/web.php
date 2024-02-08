@@ -22,16 +22,11 @@ Route::get(
     function () {
         return view('home');
 });
-Route::controller(authController::class)->group(function (){
-    Route::get('register','register')->name('register');
-});
-Route::post('/register',[authController::class,'registerPost'])->name('register');
+Route::get('register', [AuthController::class, 'showRegistrationForm'])->name('register');
+Route::post('register', [AuthController::class, 'register']);
+
 Route::get('/login', [AuthController::class, 'signin'])->name('signin.form');
 Route::post('/login', [AuthController::class, 'signinPost'])->name('signin');
-Route::get('/dashboard', function () {
-    if (!Auth::check()) {
-        return redirect('/login');
-    }
+Route::get('/admin' ,function (){
     return view('dashboard');
-})->name('dashboard');
-
+});
