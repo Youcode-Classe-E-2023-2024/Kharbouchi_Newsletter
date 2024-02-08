@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\ForgotPassword;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +29,4 @@ Route::get('/admin' ,function (){
 Route::get('/forget_password', function () {
         return view('Auth/forgotPassword');
 });
+Route::post('/forget_password', [ForgotPassword::class, 'ForgotPasswordPost'])->name('Forgot_Password.post');

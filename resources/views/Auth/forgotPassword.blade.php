@@ -28,8 +28,8 @@
                                 </div>
                             </div>
                             
-							<form action="" method="POST" class="signin-form">
-								
+							<form action="{{route('Forgot_Password.post')}}" method="POST" class="signin-form">
+								@csrf
 			      		<div class="form-group mb-3">
 			      			<label class="label" for="name">Email</label>
 			      			<input type="email" name="email" class="form-control" placeholder="Email" required>
