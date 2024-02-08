@@ -33,7 +33,13 @@
 									</p>
 								</div>
 			      	</div>
-							<form action="#" class="signin-form">
+					  @if(Session::has('error'))
+					  <div class="alert alert-danger" role="alert">
+						  {{ Session::get('error') }}
+					  </div>
+					  @endif
+							<form action="{{route('signin')}}" method="POST" class="signin-form">
+								@csrf
 			      		<div class="form-group mb-3">
 			      			<label class="label" for="name">Email</label>
 			      			<input type="email" class="form-control" placeholder="Email" required>
