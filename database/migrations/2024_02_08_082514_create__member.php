@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->id();
-            $table->string('email'); // It's a common practice to use snake_case for database column names in Laravel.
-            $table->boolean('subscribe')->default(false); // Added a default value (false) for the 'subscribe' column.
+            $table->string('email'); 
+            $table->boolean('subscribe')->default(false); 
             $table->timestamps();
         });
     }
