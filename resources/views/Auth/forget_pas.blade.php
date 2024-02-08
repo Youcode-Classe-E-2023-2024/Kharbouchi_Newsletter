@@ -59,7 +59,7 @@
 										</label>
 									</div>
 									<div class="w-50 text-md-right">
-										<a href="forget_password">Forgot Password</a>
+										<a href="forget_pas">Forgot Password</a>
 									</div>
 		            </div>
 		          </form>

@@ -14,9 +14,6 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::get(
     '/home',
     function () {
@@ -24,9 +21,11 @@ Route::get(
 });
 // Route::get('register', [AuthController::class, 'showRegistrationForm'])->name('register');
 // Route::post('register', [AuthController::class, 'register']);
-
 Route::get('/login', [AuthController::class, 'signin'])->name('signin.form');
 Route::post('/login', [AuthController::class, 'signinPost'])->name('signin');
 Route::get('/admin' ,function (){
     return view('dashboard');
+});
+Route::get('/forget_password', function () {
+        return view('Auth/forget_pas');
 });
