@@ -19,9 +19,9 @@ Route::get('/admin', function () {
 Route::get('/forget-password', function () {
     return view('Auth/forgotPassword'); 
 })->name('forget_password');
-
 Route::post('/forget-password', [ForgotPassword::class, 'forgotPasswordPost'])->name('forgot_password.post');
 
 Route::get('/reset-password/{token}', [ForgotPassword::class, 'resetPassword'])->name('reset.password');
+
 
 Route::post('/reset-password', [ForgotPassword::class, 'resetPasswordPost'])->name('reset.password.post');

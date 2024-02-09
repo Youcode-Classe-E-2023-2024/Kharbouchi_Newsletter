@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 use Carbon\Carbon;
 use App\Models\User; // Assuming you are using the default User model
 
-class ForgotPasswordController extends Controller // Ensure the class name matches the file name
+class forgotPassword extends Controller // Ensure the class name matches the file name
 {
     public function forgotPassword()
     {
@@ -19,6 +19,10 @@ class ForgotPasswordController extends Controller // Ensure the class name match
 
     public function forgotPasswordPost(Request $request)
     {
+    //   Mail::raw('Test email content', function ($message) {
+    //     $message->to('kharbouchikhawla603@gmail.com');
+    //     $message->subject('Test Email');
+    // });
         $request->validate([
             'email' => "required|email|exists:users,email",
         ]);
