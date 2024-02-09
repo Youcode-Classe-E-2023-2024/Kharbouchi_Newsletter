@@ -28,16 +28,16 @@
                                 </div>
                             </div>
                             
-							<form action="{{route('Forgot_Password.post')}}" method="POST" class="signin-form">
+							<form action="{{ route('forgot_password.post') }}" method="POST" class="signin-form">
 								@csrf
-			      		<div class="form-group mb-3">
-			      			<label class="label" for="name">Email</label>
-			      			<input type="email" name="email" class="form-control" placeholder="Email" required>
-			      		</div>
-		            <div class="form-group">
-		            	<button type="submit" class="form-control btn btn-primary rounded submit px-3">Send Email</button>
-		            </div>
-		          </form>
+								<div class="form-group mb-3">
+									<label class="label" for="name">Email</label>
+									<input type of="email" name="email" class="form-control" placeholder="Email" required>
+								</div>
+								<div class="form-group">
+									<button type="submit" class="form-control btn btn-primary rounded submit px-3">Send Email</button>
+								</div>
+							</form>
 		          
 		        </div>
 		      </div>
