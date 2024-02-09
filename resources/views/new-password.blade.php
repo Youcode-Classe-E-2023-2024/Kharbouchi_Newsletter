@@ -42,7 +42,7 @@
 
 
 
-							<form action="{{route('Forgot_Password.post')}}" method="POST" class="signin-form">
+							<form action="{{route('forgot_password.post')}}" method="POST" class="signin-form">
 								@csrf
                                 <input type="text" name="token" hidden value="{{$token}}">
 			      		<div class="form-group mb-3">
