@@ -34,8 +34,9 @@ class forgotPassword extends Controller // Ensure the class name matches the fil
             'token' => $token,
             'created_at' => Carbon::now(),
         ]);
+        $url = route('reset.password', ['token' => $token]);
 
-        Mail::send('emails.forget_password', ['token' => $token], function ($message) use ($request) {
+        Mail::send('emails.forget_password', ['token' => $token, 'url' => $url], function ($message) use ($request) {
             $message->to($request->email);
             $message->subject('Reset Password');
         });
