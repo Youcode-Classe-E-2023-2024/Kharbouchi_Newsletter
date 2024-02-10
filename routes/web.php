@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ForgotPassword;
+use App\Http\Controllers\MemberController;
 
 Route::get('/home', function () {
     return view('home');
@@ -28,3 +29,6 @@ Route::get('/reset-password/{token}', [ForgotPassword::class, 'resetPassword'])-
 
 
 Route::post('/reset-password', [ForgotPassword::class, 'resetPasswordPost'])->name('reset.password.post');
+
+
+Route::post('/subscribe', [MemberController::class, 'store'])->name('subscribe.store');
