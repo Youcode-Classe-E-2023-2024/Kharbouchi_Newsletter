@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Member;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
@@ -41,9 +42,10 @@ class AuthController extends Controller
     
         return back()->with('success', 'email or password not correct');
     }
-    public function showUsers()
-{
-    $users = User::all(); 
-    return view('dashboard', ['users' => $users]);
-}
+    public function showDashboard()
+    {
+        $users = User::all(); 
+        $members = Member::all();
+        return view('dashboard', compact('users', 'members'));
+    }
 }

@@ -30,5 +30,8 @@ Route::get('/reset-password/{token}', [ForgotPassword::class, 'resetPassword'])-
 
 Route::post('/reset-password', [ForgotPassword::class, 'resetPasswordPost'])->name('reset.password.post');
 
+Route::get('/admin', [MemberController::class, 'showMembers'])->name('admin.dashboard');
+Route::get('/admin', [AuthController::class, 'showDashboard'])->name('admin.dashboard');
+
 
 Route::post('/subscribe', [MemberController::class, 'store'])->name('subscribe.store');

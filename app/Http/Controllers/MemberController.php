@@ -20,5 +20,6 @@ class MemberController extends Controller
 
         return back()->with('success', 'You have successfully subscribed!');
     }
+
 }
 

@@ -255,6 +255,7 @@
                     <div class="table-responsive">
                   <table class="table text-nowrap mb-0 align-middle">
                     <thead class="text-dark fs-4">
+                      
                       <tr>
                         <th class="border-bottom-0">
                           <h6 class="fw-semibold mb-0">Id</h6>
@@ -270,13 +271,15 @@
                           <h6 class="fw-semibold mb-0">Budget</h6>
                         </th>
                       </tr>
+                      
                     </thead>
                     <tbody>
+                      @foreach ($members as $member)
                       <tr>
-                        <td class="border-bottom-0"><h6 class="fw-semibold mb-0">1</h6></td>
+                        <td class="border-bottom-0"><h6 class="fw-semibold mb-0">{{ $member->id }}</h6></td>
 
                         <td class="border-bottom-0">
-                          <p class="mb-0 fw-normal">khawla@gmail.com</p>
+                          <p class="mb-0 fw-normal">{{ $member->email }}</p>
                         </td>
                         <td class="border-bottom-0">
                           <div class="d-flex align-items-center gap-2">
@@ -287,21 +290,8 @@
                           <h6 class="fw-semibold mb-0 fs-4">$3.9</h6>
                         </td>
                       </tr> 
-                      <tr>
-                        <td class="border-bottom-0"><h6 class="fw-semibold mb-0">2</h6></td>
-
-                        <td class="border-bottom-0">
-                          <p class="mb-0 fw-normal">imad@gmail.com</p>
-                        </td>
-                        <td class="border-bottom-0">
-                          <div class="d-flex align-items-center gap-2">
-                            <span class="badge bg-secondary rounded-3 fw-semibold">Not send</span>
-                          </div>
-                        </td>
-                        <td class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0 fs-4">$24.5k</h6>
-                        </td>
-                      </tr>                    
+                      @endforeach
+                   
                     </tbody>
                   </table>
                 </div>
