@@ -11,9 +11,11 @@ Route::get('/home', function () {
 Route::get('/login', [AuthController::class, 'signin'])->name('signin.form');
 Route::post('/login', [AuthController::class, 'signinPost'])->name('signin');
 
-Route::get('/admin', function () {
-    return view('dashboard');
-})->name('admin.dashboard');
+// Route::get('/admin', function () {
+//     return view('dashboard');
+// })->name('admin.dashboard');
+Route::get('/admin', [AuthController::class, 'showUsers'])->name('admin.dashboard');
+
 
 
 Route::get('/forget-password', function () {

@@ -8,21 +8,21 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    // public function showRegistrationForm(){
-    //     return view('auth/register');
-    // }
-    // public function register(Request $request)
-    // {
-    //     $user = new User();
+    public function showRegistrationForm(){
+        return view('auth/register');
+    }
+    public function register(Request $request)
+    {
+        $user = new User();
         
-    //     $user->name = $request->name;
-    //     $user->email = $request->email;
-    //     $user->password = Hash::make($request->password);
-    //     $user->Role = 'user'; 
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->Role = 'user'; 
         
-    //     $user->save();
-    //     return back()->with('success','Registered successfully');
-    // }
+        $user->save();
+        return back()->with('success','Registered successfully');
+    }
             
             
     public function signin(){
@@ -41,4 +41,9 @@ class AuthController extends Controller
     
         return back()->with('success', 'email or password not correct');
     }
+    public function showUsers()
+{
+    $users = User::all(); 
+    return view('dashboard', ['users' => $users]);
+}
 }

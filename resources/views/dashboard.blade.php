@@ -320,40 +320,30 @@
                           <h6 class="fw-semibold mb-0">Id</h6>
                         </th>
                         <th class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0">Role</h6>
+                          <h6 class="fw-semibold mb-0">Name</h6>
                         </th>
 
                         <th class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0">Priority</h6>
+                          <h6 class="fw-semibold mb-0">Admin</h6>
                         </th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td class="border-bottom-0"><h6 class="fw-semibold mb-0">1</h6></td>
+                      @isset($users)
+                          @foreach ($users as $user)
+                          <tr>
+                              <td class="border-bottom-0"><h6 class="fw-semibold mb-0">{{$user->id}}</h6></td>
+                              <td class="border-bottom-0"><p class="mb-0 fw-normal">{{$user->name}}</p></td>
+                              <td class="border-bottom-0">
+                                  <div class="d-flex align-items-center gap-2">
+                                      <input type="checkbox" @if($user->Role == 'admin') checked @endif disabled>
+                                  </div>
+                              </td>
+                          </tr> 
+                          @endforeach
+                      @endisset
+                      </tbody>
 
-                        <td class="border-bottom-0">
-                          <p class="mb-0 fw-normal">Admin</p>
-                        </td>
-                        <td class="border-bottom-0">
-                          <div class="d-flex align-items-center  gap-2">
-                            <input type="checkbox">
-                          </div>
-                        </td>
-                      </tr> 
-                      <tr>
-                        <td class="border-bottom-0"><h6 class="fw-semibold mb-0">2</h6></td>
-
-                        <td class="border-bottom-0">
-                          <p class="mb-0 fw-normal">Reditor</p>
-                        </td>
-                        <td class="border-bottom-0">
-                          <div class="d-flex align-items-center gap-2">
-                            <input type="checkbox">
-                          </div>
-                        </td>
-                      </tr>                    
-                    </tbody>
                   </table>
                 </div>
             </div>
