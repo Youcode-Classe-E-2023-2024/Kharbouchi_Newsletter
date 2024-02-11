@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ForgotPassword;
+use App\Http\Controllers\PasswordForgotController;
 use App\Http\Controllers\MemberController;
 
 Route::get('/home', function () {
@@ -35,3 +36,13 @@ Route::get('/admin', [AuthController::class, 'showDashboard'])->name('admin.dash
 
 
 Route::post('/subscribe', [MemberController::class, 'store'])->name('subscribe.store');
+// Route pour afficher le formulaire de réinitialisation du mot de passe
+Route::get('/reset-password/{token}', function ($token) {
+    return view('emails.forget_password', ['token' => $token]);
+})->name('password.reset');
+// Met à jour le mot de passe dans la base de données
+Route::post('/reset-password', [PasswordForgotController::class, 'submitResetPasswordForm'])->name('password.update');
+
+// Route::get('/imadhabibi', [PasswordForgotController::class, 'showForgotForm'])->name('password.request');
+
+Route::post('/forgetpasspost', [PasswordForgotController::class, 'sendResetLink'])->name('forgetpasspost');

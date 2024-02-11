@@ -265,10 +265,10 @@
                         </th>
 
                         <th class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0">Priority</h6>
+                          <h6 class="fw-semibold mb-0">Select</h6>
                         </th>
                         <th class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0">Budget</h6>
+                          <h6 class="fw-semibold mb-0">Priority</h6>
                         </th>
                       </tr>
                       
@@ -282,13 +282,14 @@
                           <p class="mb-0 fw-normal">{{ $member->email }}</p>
                         </td>
                         <td class="border-bottom-0">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        </td>
+                        <td class="border-bottom-0">
                           <div class="d-flex align-items-center gap-2">
                             <span class="badge bg-primary rounded-3 fw-semibold">Send</span>
                           </div>
                         </td>
-                        <td class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0 fs-4">$3.9</h6>
-                        </td>
+
                       </tr> 
                       @endforeach
                    
@@ -298,7 +299,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-6 d-flex align-items-stretch"> <!-- Changed to col-lg-6 for 50% width -->
+        <div class="col-lg-6 d-flex align-items-stretch"> 
             <div class="card w-100">
               <div class="card-body p-4">
                 <h5 class="card-title fw-semibold mb-4">Role</h5>
@@ -326,7 +327,7 @@
                               <td class="border-bottom-0"><p class="mb-0 fw-normal">{{$user->name}}</p></td>
                               <td class="border-bottom-0">
                                   <div class="d-flex align-items-center gap-2">
-                                      <input type="checkbox" @if($user->Role == 'admin') checked @endif disabled>
+                                      <input type="checkbox" @if($user->Role == 'admin') checked @endif >
                                   </div>
                               </td>
                           </tr> 

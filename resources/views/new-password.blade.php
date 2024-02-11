@@ -28,10 +28,6 @@
                                 </div>
                             </div>
 
-
-
-
-
                             @if(session()->has('error'))
                             <div class="alert alert-danger">{{session('error')}}</div>
                             @endif
@@ -39,10 +35,7 @@
                             <div class="alert alert-success">{{session('success')}}</div>
                             @endif
 
-
-
-
-							<form action="{{route('forgot_password.post')}}" method="POST" class="signin-form">
+							<form action="{{ route('password.update') }}" method="POST" class="signin-form">
 								@csrf
                                 <input type="text" name="token" hidden value="{{$token}}">
 			      		<div class="form-group mb-3">

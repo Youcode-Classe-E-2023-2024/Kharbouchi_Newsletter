@@ -8,9 +8,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
-use App\Models\User; // Assuming you are using the default User model
+use App\Models\User; 
+use Illuminate\Support\Facades\Password;
+use App\Mail\SimpleEmail;
 
-class forgotPassword extends Controller // Ensure the class name matches the file name
+class forgotPassword extends Controller 
 {
     public function forgotPassword()
     {
@@ -19,13 +21,20 @@ class forgotPassword extends Controller // Ensure the class name matches the fil
 
     public function forgotPasswordPost(Request $request)
     {
-    //   Mail::raw('Test email content', function ($message) {
-    //     $message->to('kharbouchikhawla603@gmail.com');
-    //     $message->subject('Test Email');
-    // });
         $request->validate([
-            'email' => "required|email|exists:users,email",
+            'email' => 'required|email',
         ]);
+
+        Mail::to($request->email)->send(new SimpleEmail());
+        $status = Password::sendResetLink(
+            $request->only('email')
+        );
+
+        return $status === Password::RESET_LINK_SENT
+            ? back()->with('status', ($status))
+            : back()->withInput($request->only('email'))->withErrors(['email' => ($status)]);
+
+    
 
         $token = Str::random(64);
 
