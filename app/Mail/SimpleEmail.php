@@ -14,6 +14,8 @@ class SimpleEmail extends Mailable
       
  /**Build the message.*
 @return $this*/
+
+
 public function build(){
     return $this->view('emails.simple-email')->subject('Simple Email');}
 }
