@@ -1,7 +1,5 @@
 <?php
 
-// App\Mail\SimpleEmail.php
-
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
@@ -13,9 +11,8 @@ class SimpleEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     
-Build the message.*
+      
+ /**Build the message.*
 @return $this*/
 public function build(){
     return $this->view('emails.simple-email')->subject('Simple Email');}
