@@ -38,7 +38,7 @@ class forgotPassword extends Controller
 
         $token = Str::random(64);
 
-        DB::table('password_resets')->insert([ // Ensure you're using the correct table name
+        DB::table('password_resets')->insert([ 
             'email' => $request->email,
             'token' => $token,
             'created_at' => Carbon::now(),
@@ -50,7 +50,7 @@ class forgotPassword extends Controller
             $message->subject('Reset Password');
         });
 
-        return redirect()->route('forget_password') // Use route() directly for named routes
+        return redirect()->route('forget_password') 
             ->with('success', 'We have sent an email to reset your password.');
     }
 
