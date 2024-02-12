@@ -294,8 +294,8 @@
                           <div class="d-flex align-items-center gap-2">
                             <form action="{{ route('member.delete', $member->id) }}" method="POST">
                               @csrf
-                              @method('DELETE') <!-- Simule une requête DELETE -->
-                              <button type="submit" class="btn btn-danger rounded-3 fw-semibold">Supprimer</button>
+                              @method('DELETE') 
+                              <button type="submit" class="btn btn-danger rounded-3 fw-semibold">Delete</button>
                           </form>
                           </div>
                         </td>
