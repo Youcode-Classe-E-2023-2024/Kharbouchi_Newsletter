@@ -308,7 +308,12 @@
         <div class="col-lg-6 d-flex align-items-stretch"> 
             <div class="card w-100">
               <div class="card-body p-4">
-                <h5 class="card-title fw-semibold mb-4">Role</h5>
+                <div class="d-flex align-items-center justify-content-between">
+                  <h5 class="card-title fw-semibold mb-0">Role</h5> 
+                  <div class="gap-2">
+                    <button class="btn btn-success rounded-3 fw-semibold">Valider</button>
+                  </div>
+                </div>
                 <div class="table-responsive">
                   <table class="table text-nowrap mb-0 align-middle">
                     <thead class="text-dark fs-4">
@@ -337,15 +342,10 @@
                                   </div>
                               </td>
                           </tr> 
-                          
                           @endforeach
                       @endisset
                       </tbody>
                   </table>
-
-                </div>
-                <div class="d-flex align-items-center gap-2">
-                  <button class="btn btn-success rounded-3 fw-semibold">Valider</button>
                 </div>
             </div>
           </div>
