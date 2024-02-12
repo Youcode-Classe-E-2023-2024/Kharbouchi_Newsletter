@@ -384,8 +384,6 @@
     </dialog> --}}
 {{-- end modal --}}
 
-
-          
           <div class="col-sm-6 col-xl-3">
             <div class="card overflow-hidden rounded-2">
               <div class="position-relative">
