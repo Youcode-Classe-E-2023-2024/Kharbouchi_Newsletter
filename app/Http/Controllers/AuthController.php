@@ -48,4 +48,13 @@ class AuthController extends Controller
         $members = Member::all();
         return view('dashboard', compact('users', 'members'));
     }
+    public function logout(Request $request)
+    {
+        Auth::logout(); 
+
+        $request->session()->invalidate(); 
+        $request->session()->regenerateToken(); 
+
+        return redirect('/home'); 
+    }
 }
