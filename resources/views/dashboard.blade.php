@@ -246,12 +246,18 @@
             </div>
           </div>
         </div>
-        <div class="container-fluid"> <!-- Ensures full width -->
+        <div class="container-fluid"> 
             <div class="row">
-              <div class="col-lg-6 d-flex align-items-stretch"> <!-- Changed to col-lg-6 for 50% width -->
+              <div class="col-lg-6 d-flex align-items-stretch"> 
                 <div class="card w-100">
                   <div class="card-body p-4">
-                    <h5 class="card-title fw-semibold mb-4">Users</h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <h5 class="card-title fw-semibold mb-0">Users</h5> 
+                      <div class="gap-2">
+                        <button class="btn btn-success rounded-3 fw-semibold">Valider</button>
+                      </div>
+                    </div>
+
                     <div class="table-responsive">
                   <table class="table text-nowrap mb-0 align-middle">
                     <thead class="text-dark fs-4">
@@ -286,7 +292,7 @@
                         </td>
                         <td class="border-bottom-0">
                           <div class="d-flex align-items-center gap-2">
-                            <span class="badge bg-primary rounded-3 fw-semibold">Send</span>
+                            <button class="btn btn-danger rounded-3 fw-semibold">Delete</button>
                           </div>
                         </td>
 
@@ -331,11 +337,15 @@
                                   </div>
                               </td>
                           </tr> 
+                          
                           @endforeach
                       @endisset
                       </tbody>
-
                   </table>
+
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <button class="btn btn-success rounded-3 fw-semibold">Valider</button>
                 </div>
             </div>
           </div>
@@ -343,6 +353,37 @@
       </div>
     </div>
         <div class="row">
+
+          <h1>New news</h1>
+    {{-- modal --}}
+    {{-- <dialog id="modal_1" class="modal rounded-lg w-2/4 h-3/5 border border-black ">
+                                    
+      <div class="modal-box text-center">
+  <div class="d-flex flex-col items-center justify-center space-y-4">
+      <h1 class="italic text-xl font-bold mt-4 mb-4">gfjgjkj</h1>
+      <img src="#" alt="image" class="w-5/6 h-48 mx-auto mt-10 rounded-lg"/>
+      <h3 class="font-semibold italic">$5454</h3>
+      <p>dfghjklmrtjkl</p>
+  </div>
+        <div class="modal-action mb-10 mt-10">
+          <form method="dialog">
+              <button href="#_" class="btn relative px-5 py-3 overflow-hidden font-medium text-gray-600 bg-gray-100 border border-gray-100 rounded-lg shadow-inner group">
+                  <span class="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
+                  <span class="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
+                  <span class="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
+                  <span class="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
+                  <span class="absolute inset-0 w-full h-full duration-300 delay-300 bg-gray-900 opacity-0 group-hover:opacity-100"></span>
+                  <span class="relative transition-colors duration-300 delay-200 group-hover:text-white ease">Close</span>
+                  </button>
+            
+          </form>
+        </div>
+      </div>
+    </dialog> --}}
+{{-- end modal --}}
+
+
+          
           <div class="col-sm-6 col-xl-3">
             <div class="card overflow-hidden rounded-2">
               <div class="position-relative">
@@ -351,14 +392,8 @@
               <div class="card-body pt-3 p-4">
                 <h6 class="fw-semibold fs-4">Boat Headphone</h6>
                 <div class="d-flex align-items-center justify-content-between">
-                  <h6 class="fw-semibold fs-4 mb-0">$50 <span class="ms-2 fw-normal text-muted fs-3"><del>$65</del></span></h6>
-                  <ul class="list-unstyled d-flex align-items-center mb-0">
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                    <li><a class="" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                  </ul>
+                  <h6 class="fw-semibold fs-4 mb-0">sdfghjklmù</h6>
+
                 </div>
               </div>
             </div>
@@ -366,19 +401,13 @@
           <div class="col-sm-6 col-xl-3">
             <div class="card overflow-hidden rounded-2">
               <div class="position-relative">
-                <a href="javascript:void(0)"><img src="../assets/images/products/s5.jpg" class="card-img-top rounded-0" alt="..."></a>
+                <a href="javascript:void(0)"><img src="../assets/images/products/s4.jpg" class="card-img-top rounded-0" alt="..."></a>
                 <a href="javascript:void(0)" class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i class="ti ti-basket fs-4"></i></a>                      </div>
               <div class="card-body pt-3 p-4">
-                <h6 class="fw-semibold fs-4">MacBook Air Pro</h6>
+                <h4 class="fw-semibold fs-4">Boat Headphone</h4>
                 <div class="d-flex align-items-center justify-content-between">
-                  <h6 class="fw-semibold fs-4 mb-0">$650 <span class="ms-2 fw-normal text-muted fs-3"><del>$900</del></span></h6>
-                  <ul class="list-unstyled d-flex align-items-center mb-0">
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                    <li><a class="" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                  </ul>
+                  <h6 class="fw-semibold fs-4 mb-0">sdfghjklmù</h6>
+
                 </div>
               </div>
             </div>
@@ -386,19 +415,13 @@
           <div class="col-sm-6 col-xl-3">
             <div class="card overflow-hidden rounded-2">
               <div class="position-relative">
-                <a href="javascript:void(0)"><img src="../assets/images/products/s7.jpg" class="card-img-top rounded-0" alt="..."></a>
+                <a href="javascript:void(0)"><img src="../assets/images/products/s4.jpg" class="card-img-top rounded-0" alt="..."></a>
                 <a href="javascript:void(0)" class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i class="ti ti-basket fs-4"></i></a>                      </div>
               <div class="card-body pt-3 p-4">
-                <h6 class="fw-semibold fs-4">Red Valvet Dress</h6>
+                <h6 class="fw-semibold fs-4">Boat Headphone</h6>
                 <div class="d-flex align-items-center justify-content-between">
-                  <h6 class="fw-semibold fs-4 mb-0">$150 <span class="ms-2 fw-normal text-muted fs-3"><del>$200</del></span></h6>
-                  <ul class="list-unstyled d-flex align-items-center mb-0">
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                    <li><a class="" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                  </ul>
+                  <h6 class="fw-semibold fs-4 mb-0">sdfghjklmù</h6>
+
                 </div>
               </div>
             </div>
@@ -406,19 +429,13 @@
           <div class="col-sm-6 col-xl-3">
             <div class="card overflow-hidden rounded-2">
               <div class="position-relative">
-                <a href="javascript:void(0)"><img src="../assets/images/products/s11.jpg" class="card-img-top rounded-0" alt="..."></a>
+                <a href="javascript:void(0)"><img src="../assets/images/products/s4.jpg" class="card-img-top rounded-0" alt="..."></a>
                 <a href="javascript:void(0)" class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i class="ti ti-basket fs-4"></i></a>                      </div>
               <div class="card-body pt-3 p-4">
-                <h6 class="fw-semibold fs-4">Cute Soft Teddybear</h6>
+                <h6 class="fw-semibold fs-4">Boat Headphone</h6>
                 <div class="d-flex align-items-center justify-content-between">
-                  <h6 class="fw-semibold fs-4 mb-0">$285 <span class="ms-2 fw-normal text-muted fs-3"><del>$345</del></span></h6>
-                  <ul class="list-unstyled d-flex align-items-center mb-0">
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                    <li><a class="me-1" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                    <li><a class="" href="javascript:void(0)"><i class="ti ti-star text-warning"></i></a></li>
-                  </ul>
+                  <h6 class="fw-semibold fs-4 mb-0">sdfghjklmù</h6>
+
                 </div>
               </div>
             </div>
