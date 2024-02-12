@@ -47,3 +47,6 @@ Route::post('/forgetpasspost', [PasswordForgotController::class, 'sendResetLink'
 
 Route::post('/change-role', [UserController::class, 'changeRole'])->name('changeRole');
 
+Route::delete('/member/delete/{id}', [MemberController::class, 'delete'])->name('member.delete');
+
+

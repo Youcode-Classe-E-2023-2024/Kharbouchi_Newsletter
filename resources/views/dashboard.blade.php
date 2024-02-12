@@ -250,10 +250,11 @@
               <div class="col-lg-6 d-flex align-items-stretch"> 
                 <div class="card w-100">
                   <div class="card-body p-4">
+
                     <div class="d-flex align-items-center justify-content-between">
                       <h5 class="card-title fw-semibold mb-0">Users</h5> 
                       <div class="gap-2">
-                        <button class="btn btn-success rounded-3 fw-semibold">Valider</button>
+                        <button type="submit" class="btn btn-success rounded-3 fw-semibold">Valider</button>
                       </div>
                     </div>
 
@@ -291,7 +292,11 @@
                         </td>
                         <td class="border-bottom-0">
                           <div class="d-flex align-items-center gap-2">
-                            <button class="btn btn-danger rounded-3 fw-semibold">Delete</button>
+                            <form action="{{ route('member.delete', $member->id) }}" method="POST">
+                              @csrf
+                              @method('DELETE') <!-- Simule une requête DELETE -->
+                              <button type="submit" class="btn btn-danger rounded-3 fw-semibold">Supprimer</button>
+                          </form>
                           </div>
                         </td>
 
