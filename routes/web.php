@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ForgotPassword;
 use App\Http\Controllers\PasswordForgotController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\UserController;
 
 Route::get('/home', function () {
     return view('home');
@@ -43,3 +44,6 @@ Route::post('/reset-password', [PasswordForgotController::class, 'submitResetPas
 
 
 Route::post('/forgetpasspost', [PasswordForgotController::class, 'sendResetLink'])->name('forgetpasspost');
+
+Route::post('/change-role', [UserController::class, 'changeRole'])->name('changeRole');
+

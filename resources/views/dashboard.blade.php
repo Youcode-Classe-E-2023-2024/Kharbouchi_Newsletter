@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Modernize Free</title>
-  <link rel="shortcut icon" type="image/png" href="{{asset('assets/images/logos/favicon.png')}}" />
+  <title>Dashboard</title>
   <link rel="stylesheet" href="{{asset('assets/css/styles.min.css')}}" />
 </head>
 
@@ -308,10 +307,12 @@
         <div class="col-lg-6 d-flex align-items-stretch"> 
             <div class="card w-100">
               <div class="card-body p-4">
+                <form method="POST" action="{{ route('changeRole') }}">
+                  @csrf
                 <div class="d-flex align-items-center justify-content-between">
                   <h5 class="card-title fw-semibold mb-0">Role</h5> 
                   <div class="gap-2">
-                    <button class="btn btn-success rounded-3 fw-semibold">Valider</button>
+                    <button type="submit" class="btn btn-success rounded-3 fw-semibold">Valider</button>
                   </div>
                 </div>
                 <div class="table-responsive">
@@ -338,7 +339,7 @@
                               <td class="border-bottom-0"><p class="mb-0 fw-normal">{{$user->name}}</p></td>
                               <td class="border-bottom-0">
                                   <div class="d-flex align-items-center gap-2">
-                                      <input type="checkbox" @if($user->Role == 'admin') checked @endif >
+                                      <input type="checkbox" name="roles[{{$user->id}}]" @if($user->Role == 'Admin') checked @endif >
                                   </div>
                               </td>
                           </tr> 
@@ -347,6 +348,7 @@
                       </tbody>
                   </table>
                 </div>
+              </form>
             </div>
           </div>
         </div>
