@@ -160,6 +160,10 @@ return [
          * Package Service Providers...
          */
 
+            // Other Service Providers
+        
+            Spatie\Permission\PermissionServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
