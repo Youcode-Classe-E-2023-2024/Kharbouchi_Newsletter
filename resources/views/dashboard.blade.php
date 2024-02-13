@@ -393,20 +393,31 @@
                                                 <div class="magazine-column">
                                                     <article class="article">
                                                         <figure class="article-img">
-                                                            <input type="file" >
+                                                          <input id="input-b1" name="input-b1" type="file" class="file" data-browse-on-zone-click="true">
                                                         </figure>
                                                         <h2 class="article-title article-title--medium">
-                                                            <a href="#" class="article-link"><input type="text" name="" id="" placeholder="How 7 Lines of Code
-                                                              Turned Into a $36 Billion Empire"></a>
+
+                                                            <a href="#" class="article-link">
+                                                              <div class="form-group">
+                                                                <label for="exampleInputEmail1">Email address</label>
+                                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="How 7 Lines of Code
+                                                                Turned Into a $36 Billion Empire">
+                                                              </a>
+                                                            </div>
                                                         </h2>
                                                         <div class="article-excerpt">
-
-                                                            <p><textarea> placeholder=" it's safe to say these guys have a great sense of
+                                                          <div class="form-group">
+                                                            <label for="comment">Text</label>
+                                                            <textarea class="form-control" rows="5" id="comment">
+                                                              <p>" it's safe to say these guys have a great sense of
                                                               humor, which isn't really suprising for us considering
                                                               their seemingly absurd solution to online payments.
                                                               Instead of chasing 1000-hour programming contracts to
                                                               build clunky payments solutions for each individual
-                                                              client, the Collison..." </textarea></p>
+                                                              client, the Collison..." </p>
+                                                            </textarea>
+                                                          </div>
+                                                            
                                                         </div>
                                                         <div class="article-author">
                                                             <div class="article-author-img">
@@ -415,7 +426,7 @@
                                                             </div>
                                                             <div class="article-author-info">
                                                                 <dl>
-                                                                    <dt>James Robert</dt>
+                                                                    <dt>khawla</dt>
                                                                     <dd>Editor</dd>
                                                                 </dl>
                                                             </div>
@@ -426,73 +437,15 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Send</button>
+                                        data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-secondary"
+                                        data-dismiss="modal">Send</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    {{-- <div class="col-sm-6 col-xl-3">
-            <div class="card overflow-hidden rounded-2">
-              <div class="position-relative">
-                <a href="javascript:void(0)"><img src="../assets/images/products/s4.jpg" class="card-img-top rounded-0" alt="..."></a>
-                <a href="javascript:void(0)" class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i class="ti ti-basket fs-4"></i></a>                      </div>
-              <div class="card-body pt-3 p-4">
-                <h6 class="fw-semibold fs-4">Boat Headphone</h6>
-                <div class="d-flex align-items-center justify-content-between">
-                  <h6 class="fw-semibold fs-4 mb-0">sdfghjklmù</h6>
-
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-xl-3">
-            <div class="card overflow-hidden rounded-2">
-              <div class="position-relative">
-                <a href="javascript:void(0)"><img src="../assets/images/products/s4.jpg" class="card-img-top rounded-0" alt="..."></a>
-                <a href="javascript:void(0)" class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i class="ti ti-basket fs-4"></i></a>                      </div>
-              <div class="card-body pt-3 p-4">
-                <h4 class="fw-semibold fs-4">Boat Headphone</h4>
-                <div class="d-flex align-items-center justify-content-between">
-                  <h6 class="fw-semibold fs-4 mb-0">sdfghjklmù</h6>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-xl-3">
-            <div class="card overflow-hidden rounded-2">
-              <div class="position-relative">
-                <a href="javascript:void(0)"><img src="../assets/images/products/s4.jpg" class="card-img-top rounded-0" alt="..."></a>
-                <a href="javascript:void(0)" class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i class="ti ti-basket fs-4"></i></a>                      </div>
-              <div class="card-body pt-3 p-4">
-                <h6 class="fw-semibold fs-4">Boat Headphone</h6>
-                <div class="d-flex align-items-center justify-content-between">
-                  <h6 class="fw-semibold fs-4 mb-0">sdfghjklmù</h6>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-xl-3">
-            <div class="card overflow-hidden rounded-2">
-              <div class="position-relative">
-                <a href="javascript:void(0)"><img src="../assets/images/products/s4.jpg" class="card-img-top rounded-0" alt="..."></a>
-                <a href="javascript:void(0)" class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i class="ti ti-basket fs-4"></i></a>                      </div>
-              <div class="card-body pt-3 p-4">
-                <h6 class="fw-semibold fs-4">Boat Headphone</h6>
-                <div class="d-flex align-items-center justify-content-between">
-                  <h6 class="fw-semibold fs-4 mb-0">sdfghjklmù</h6>
-
-                </div>
-              </div>
-            </div>
-          </div> --}}
-                </div>
-
             </div>
         </div>
     </div>
