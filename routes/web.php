@@ -13,6 +13,9 @@ Route::get('/home', function () {
 
 Route::get('/login', [AuthController::class, 'signin'])->name('signin.form');
 Route::post('/login', [AuthController::class, 'signinPost'])->name('signin');
+// Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('show.register');
+// Route::post('/register', [AuthController::class, 'register'])->name('register');
+
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/admin', [AuthController::class, 'showUsers'])->name('admin.dashboard');
