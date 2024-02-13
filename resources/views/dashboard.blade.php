@@ -279,6 +279,12 @@
         <div class="col-lg-6 d-flex align-items-stretch"> 
             <div class="card w-100">
               <div class="card-body p-4">
+                @if(session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
                 <form method="POST" action="{{ route('changeRole') }}">
                   @csrf
                 <div class="d-flex align-items-center justify-content-between">
@@ -329,6 +335,31 @@
         <div class="row">
 
           <h1>New news</h1>
+
+
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#flipFlop">
+            Click Me
+            </button>
+            
+            <!-- The modal -->
+            <div class="modal fade" id="flipFlop" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="modalLabel">Modal Title</h4>
+            </div>
+            <div class="modal-body">
+            Modal content...
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+            </div>
+            </div>
     {{-- modal --}}
     {{-- <dialog id="modal_1" class="modal rounded-lg w-2/4 h-3/5 border border-black ">
                                     
