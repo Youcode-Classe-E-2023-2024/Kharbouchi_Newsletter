@@ -36,11 +36,11 @@ class AuthController extends Controller
             'password' => $request->password,
         ];
     
-        if (Auth::attempt($data)) {
-            return redirect('/admin')->with('success', 'Good job');
+        if (Auth::attempt($data)) {           
+           return redirect('/admin')->with('success', 'Good job');
         }
     
-        return back()->with('success', 'email or password not correct');
+           return back()->with('error', 'Email or password is not correct');
     }
     public function showDashboard()
     {

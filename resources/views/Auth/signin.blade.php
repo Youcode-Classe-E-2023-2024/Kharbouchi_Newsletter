@@ -33,11 +33,16 @@
 									</p>
 								</div>
 			      	</div>
-					  @if(Session::has('error'))
+					  @if(session('error'))
 					  <div class="alert alert-danger" role="alert">
-						  {{ Session::get('error') }}
+						  {{ session('error') }}
 					  </div>
 					  @endif
+					  @if(session('success'))
+<div class="alert alert-success" role="alert">
+    {{ session('success') }}
+</div>
+@endif
 							<form action="{{route('signin')}}" method="POST" class="signin-form">
 								@csrf
 			      		<div class="form-group mb-3">
