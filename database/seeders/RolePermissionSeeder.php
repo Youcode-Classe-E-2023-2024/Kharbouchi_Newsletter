@@ -17,7 +17,7 @@ class RolePermissionSeeder extends Seeder
         Permission::create(['name' => 'unpublish articles']);
 
 
-        $roleAdmin = Role::create(['name' => 'admin']);
+        $roleAdmin = Role::create(['name' => 'khawla_kha']);
         $roleAdmin->givePermissionTo(Permission::all());
 
 
