@@ -393,20 +393,20 @@
                                                 <div class="magazine-column">
                                                     <article class="article">
                                                         <figure class="article-img">
-                                                            <img
-                                                                src="https://images.unsplash.com/photo-1484807352052-23338990c6c6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" />
+                                                            <input type="file" >
                                                         </figure>
                                                         <h2 class="article-title article-title--medium">
-                                                            <a href="#" class="article-link">How 7 Lines of Code
-                                                                Turned Into a $36 Billion Empire</a>
+                                                            <a href="#" class="article-link"><input type="text" name="" id="" placeholder="How 7 Lines of Code
+                                                              Turned Into a $36 Billion Empire"></a>
                                                         </h2>
                                                         <div class="article-excerpt">
-                                                            <p>Yeah, it's safe to say these guys have a great sense of
-                                                                humor, which isn't really suprising for us considering
-                                                                their seemingly absurd solution to online payments.
-                                                                Instead of chasing 1000-hour programming contracts to
-                                                                build clunky payments solutions for each individual
-                                                                client, the Collison...</p>
+
+                                                            <p><textarea> placeholder=" it's safe to say these guys have a great sense of
+                                                              humor, which isn't really suprising for us considering
+                                                              their seemingly absurd solution to online payments.
+                                                              Instead of chasing 1000-hour programming contracts to
+                                                              build clunky payments solutions for each individual
+                                                              client, the Collison..." </textarea></p>
                                                         </div>
                                                         <div class="article-author">
                                                             <div class="article-author-img">
@@ -422,12 +422,13 @@
                                                         </div>
                                                     </article>
                                                 </div>
-                                            
                                         </main>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Send</button>
                                     </div>
                                 </div>
                             </div>
