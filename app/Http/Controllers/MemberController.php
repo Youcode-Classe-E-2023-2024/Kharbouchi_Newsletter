@@ -27,16 +27,16 @@ class MemberController extends Controller
         if (!empty($selectedIds)) {
             Member::whereIn('id', $selectedIds)->delete(); 
         }
-
+    
         return back()->with('success', 'Les utilisateurs sélectionnés ont été supprimés.');
     }
-
-  
+    
     public function delete($id)
     {
         $member = Member::findOrFail($id); 
         $member->delete(); 
-
-        return back()->with('success', 'Membre supprimé avec succès.');
+    
+        return back()->with('success', 'Les utilisateurs sélectionnés ont été supprimés.');
     }
+    
 }

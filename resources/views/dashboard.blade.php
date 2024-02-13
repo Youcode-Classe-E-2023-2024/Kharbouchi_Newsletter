@@ -209,7 +209,15 @@
               <div class="col-lg-6 d-flex align-items-stretch"> 
                 <div class="card w-100">
                   <div class="card-body p-4">
-
+                    @if(session('success'))
+                    <!-- Success Alert -->
+                    <div class="alert alert-success alert-dismissible d-flex align-items-center fade show">
+                        <i class="bi-check-circle-fill"></i>
+                        <strong class="mx-2">Success!</strong> {{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    @endif
+                    {{-- alert --}}
                     <div class="d-flex align-items-center justify-content-between">
                       <h5 class="card-title fw-semibold mb-0">Users</h5> 
                       <div class="gap-2">
