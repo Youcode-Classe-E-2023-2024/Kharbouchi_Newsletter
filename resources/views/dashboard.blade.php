@@ -9,8 +9,43 @@
     <link rel="stylesheet" href="{{ asset('assets/css/styles.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/journal.css') }}" />
     <style>
+        .upload-container {
+            background-color: rgb(239, 239, 239);
+            border-radius: 6px;
+            padding: 10px;
+        }
 
+        .border-container {
+            border: 5px dashed rgba(198, 198, 198, 0.65);
+            /*   border-radius: 4px; */
+            padding: 20px;
+        }
 
+        .border-container p {
+            color: #130f40;
+            font-weight: 600;
+            font-size: 1.1em;
+            letter-spacing: -1px;
+            margin-top: 30px;
+            margin-bottom: 0;
+            opacity: 0.65;
+        }
+
+        #file-browser {
+            text-decoration: none;
+            color: rgb(22, 42, 255);
+            border-bottom: 3px dotted rgba(22, 22, 255, 0.85);
+        }
+
+        #file-browser:hover {
+            color: rgb(0, 0, 255);
+            border-bottom: 3px dotted rgba(0, 0, 255, 0.85);
+        }
+
+        .icons {
+            color: #95afc0;
+            opacity: 0.55;
+        }
     </style>
 </head>
 
@@ -376,7 +411,7 @@
                         <!------------ The modal ----------------->
                         <div class="modal fade" id="flipFlop" tabindex="-1" role="dialog"
                             aria-labelledby="modalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg" role="document"> 
+                            <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal"
@@ -385,45 +420,43 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <main class="responsive-wrapper">
-                                            <div class="page-title">
-                                                <h1>Latest Updates</h1>
-                                            </div>
+                                        <div class="modal-body">
+                                            <main class="responsive-wrapper">
+                                                <div class="page-title">
+                                                    <h1>Latest Updates</h1>
+                                                </div>
 
                                                 <div class="magazine-column">
                                                     <article class="article">
-                                                        <figure class="article-img">
-                                                          <input id="input-b1" name="input-b1" type="file" class="file" data-browse-on-zone-click="true">
-                                                        </figure>
-                                                        <h2 class="article-title article-title--medium">
-
-                                                            <a href="#" class="article-link">
-                                                              <div class="form-group">
-                                                                <label for="exampleInputEmail1">Email address</label>
-                                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="How 7 Lines of Code
-                                                                Turned Into a $36 Billion Empire">
-                                                              </a>
+                                                        <div class="upload-container">
+                                                            <div class="border-container">
+                                                                <div class="icons fa-4x">
+                                                                    <i class="fas fa-file-image" data-fa-transform="shrink-3 down-2 left-6 rotate--45"></i>
+                                                                    <i class="fas fa-file-alt" data-fa-transform="shrink-2 up-4"></i>
+                                                                    <i class="fas fa-file-pdf" data-fa-transform="shrink-3 down-2 right-6 rotate-45"></i>
+                                                                    <!-- Ajout d'une icône pour le téléchargement -->
+                                                                    <i class="fas fa-upload" id="file-icon"></i>
+                                                                </div>
+                                                                <input type="file" id="file-upload" style="">
+                                                                <p>Drag and drop files here, or
+                                                                    <a href="#" id="file-browser">browse</a> your computer.
+                                                                </p>
                                                             </div>
-                                                        </h2>
-                                                        <div class="article-excerpt">
-                                                          <div class="form-group">
-                                                            <label for="comment">Text</label>
-                                                            <textarea class="form-control" rows="5" id="comment">
-                                                              <p>" it's safe to say these guys have a great sense of
-                                                              humor, which isn't really suprising for us considering
-                                                              their seemingly absurd solution to online payments.
-                                                              Instead of chasing 1000-hour programming contracts to
-                                                              build clunky payments solutions for each individual
-                                                              client, the Collison..." </p>
-                                                            </textarea>
-                                                          </div>
-                                                            
                                                         </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail1">title</label>
+                                                            <input type="text" class="form-control"
+                                                                id="exampleInputEmail1" placeholder="title news">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="comment">Text</label>
+                                                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                                                        </div>
+
                                                         <div class="article-author">
-                                                            <div class="article-author-img">
-                                                                <img
-                                                                    src="https://assets.codepen.io/285131/author-2.png" />
-                                                            </div>
+                                                            <img src="https://assets.codepen.io/285131/author-2.png"
+                                                                alt="Author" class="article-author-img">
                                                             <div class="article-author-info">
                                                                 <dl>
                                                                     <dt>khawla</dt>
@@ -433,13 +466,14 @@
                                                         </div>
                                                     </article>
                                                 </div>
-                                        </main>
+                                            </main>
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
-                                        data-dismiss="modal">Close</button>
+                                            data-dismiss="modal">Close</button>
                                         <button type="button" class="btn btn-secondary"
-                                        data-dismiss="modal">Send</button>
+                                            data-dismiss="modal">Send</button>
                                     </div>
                                 </div>
                             </div>
@@ -449,6 +483,65 @@
             </div>
         </div>
     </div>
+
+    {{-- <main class="responsive-wrapper">
+        <div class="page-title">
+            <h1>Latest Updates</h1>
+        </div>
+
+            <div class="magazine-column">
+                <article class="article">
+                    <figure class="article-img">
+                      <input id="input-b1" name="input-b1" type="file" class="file" data-browse-on-zone-click="true">
+                    </figure>
+                    <h2 class="article-title article-title--medium">
+
+                        <a href="#" class="article-link">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="How 7 Lines of Code
+                            Turned Into a $36 Billion Empire">
+                          </a>
+                        </div>
+                    </h2>
+                    <div class="article-excerpt">
+                      <div class="form-group">
+                        <label for="comment">Text</label>
+                        <textarea class="form-control" rows="5" id="comment">
+                          <p>" it's safe to say these guys have a great sense of
+                          humor, which isn't really suprising for us considering
+                          their seemingly absurd solution to online payments.
+                          Instead of chasing 1000-hour programming contracts to
+                          build clunky payments solutions for each individual
+                          client, the Collison..." </p>
+                        </textarea>
+                      </div>
+                        
+                    </div>
+                    <div class="article-author">
+                        <div class="article-author-img">
+                            <img
+                                src="https://assets.codepen.io/285131/author-2.png" />
+                        </div>
+                        <div class="article-author-info">
+                            <dl>
+                                <dt>khawla</dt>
+                                <dd>Editor</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </article>
+            </div>
+    </main> --}}
+    <script>
+        $("#file-upload").css("opacity", "0");
+
+        $("#file-browser").click(function(e) {
+            e.preventDefault();
+            $("#file-upload").trigger("click");
+        });
+    </script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.9/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
