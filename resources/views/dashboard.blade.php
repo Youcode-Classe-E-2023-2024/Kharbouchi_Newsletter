@@ -156,6 +156,18 @@
                         </ul>
                     </div>
                 </nav>
+
+            @if (session('success'))
+            <!-- Success Alert -->
+            <div
+                class="alert alert-success alert-dismissible d-flex align-items-center fade show">
+                <i class="bi-check-circle-fill"></i>
+                <strong class="mx-2">Success!</strong> {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                    aria-label="Close"></button>
+            </div>
+        @endif
+
             </header>
             <!--  Header End -->
             <div class="container-fluid">
@@ -259,16 +271,7 @@
                         <div class="col-lg-6 d-flex align-items-stretch">
                             <div class="card w-100">
                                 <div class="card-body p-4">
-                                    @if (session('success'))
-                                        <!-- Success Alert -->
-                                        <div
-                                            class="alert alert-success alert-dismissible d-flex align-items-center fade show">
-                                            <i class="bi-check-circle-fill"></i>
-                                            <strong class="mx-2">Success!</strong> {{ session('success') }}
-                                            <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                                aria-label="Close"></button>
-                                        </div>
-                                    @endif
+
                                     {{-- alert --}}
                                     <div class="d-flex align-items-center justify-content-between">
                                         <h5 class="card-title fw-semibold mb-0">Users</h5>
@@ -338,13 +341,7 @@
                         <div class="col-lg-6 d-flex align-items-stretch">
                             <div class="card w-100">
                                 <div class="card-body p-4">
-                                    @if (session('success'))
-                                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                            {{ session('success') }}
-                                            <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                                aria-label="Close"></button>
-                                        </div>
-                                    @endif
+
                                     <form method="POST" action="{{ route('changeRole') }}">
                                         @csrf
                                         <div class="d-flex align-items-center justify-content-between">
@@ -475,7 +472,7 @@
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-secondary"
-                                            data-dismiss="modal">Upload</button>
+                                            >Upload</button>
                                     </div>
                                 </form>
                                 </div>

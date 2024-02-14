@@ -6,6 +6,7 @@ use App\Http\Controllers\ForgotPassword;
 use App\Http\Controllers\PasswordForgotController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UploadController;
 
 Route::get('/home', function () {
     return view('home');
@@ -52,5 +53,7 @@ Route::post('/forgetpasspost', [PasswordForgotController::class, 'sendResetLink'
 Route::post('/change-role', [UserController::class, 'changeRole'])->name('changeRole');
 
 Route::delete('/member/delete/{id}', [MemberController::class, 'delete'])->name('member.delete');
+
+Route::post('/upload', [UploadController::class, 'store']);
 
 
