@@ -419,6 +419,8 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
+                                    <form action="/upload" method="POST" enctype="multipart/form-data">
+                                        @csrf
                                     <div class="modal-body">
                                         <div class="modal-body">
                                             <main class="responsive-wrapper">
@@ -437,7 +439,7 @@
                                                                     <!-- Ajout d'une icône pour le téléchargement -->
                                                                     <i class="fas fa-upload" id="file-icon"></i>
                                                                 </div>
-                                                                <input type="file" id="file-upload" style="">
+                                                                <input type="file" id="file-upload" name="file" >
                                                                 <p>Drag and drop files here, or
                                                                     <a href="#" id="file-browser">browse</a> your computer.
                                                                 </p>
@@ -446,12 +448,12 @@
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail1">title</label>
                                                             <input type="text" class="form-control"
-                                                                id="exampleInputEmail1" placeholder="title news">
+                                                            id="title" name="title" placeholder="title">
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label for="comment">Text</label>
-                                                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                                                            <textarea class="form-control" rows="5" id="text" name="text"></textarea>
                                                         </div>
 
                                                         <div class="article-author">
@@ -472,9 +474,10 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Send</button>
+                                        <button type="submit" class="btn btn-secondary"
+                                            data-dismiss="modal">Upload</button>
                                     </div>
+                                </form>
                                 </div>
                             </div>
                         </div>
