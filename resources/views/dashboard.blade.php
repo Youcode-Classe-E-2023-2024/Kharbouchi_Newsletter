@@ -48,26 +48,41 @@
         }
     </style>
     <style>
+        #wrapper {
+
+            display: flex;
+            justify-content: center;
+            /* Centre horizontalement */
+            align-items: center;
+
+        }
 
         #news-slider {
             display: grid;
-    margin: 0 auto;
-            grid-template-columns: repeat(3, 1fr); 
-    gap: 20px;
+            margin: 0 auto;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
             margin-top: 80px;
-            justify-content: center; /* Centrage horizontal */
-    align-items: center;
+            justify-content: center;
+            align-items: center;
         }
-        
+
 
         .post-slide {
             width: 400px;
             height: 400px;
-            background: #efe831;
+            background: #fff;
             margin: 20px 15px 20px;
             border-radius: 15px;
             padding-top: 1px;
-            box-shadow: 0px 14px 22px -9px #bbcbd8;
+            box-shadow: 0px 14px 22px -9px #bbd8f0;
+        }
+
+        #selectBankList {
+            display: block;
+            background: #fff;
+            margin: 0 auto;
+            width: 50%;
         }
 
         .post-slide .post-img {
@@ -97,7 +112,7 @@
             left: 0;
             opacity: 0;
             background: linear-gradient(-45deg,
-                    rgba(6, 190, 244, 0.75) 0%,
+                    #06bef4bf 0%,
                     rgba(45, 112, 253, 0.6) 100%);
             transition: all 0.5s linear;
         }
@@ -117,7 +132,7 @@
         }
 
         .post-slide .post-content {
-            background: #efcf1a;
+            background: #24ccffbf;
             padding: 2px 20px 40px;
             border-radius: 15px;
             height: 200px;
@@ -126,7 +141,7 @@
         .post-slide .post-title a {
             font-size: 15px;
             font-weight: bold;
-            color: #333;
+            color: #000000;
             display: inline-block;
             text-transform: uppercase;
             transition: all 0.3s ease 0s;
@@ -139,12 +154,12 @@
 
         .post-slide .post-description {
             line-height: 24px;
-            color: #808080;
+            color: #000000;
             margin-bottom: 25px;
         }
 
         .post-slide .post-date {
-            color: #a9a9a9;
+            color: #000000;
             font-size: 14px;
         }
 
@@ -552,7 +567,7 @@
                         </div>
                     </div>
                 </div>
-                <div  class="photocont row">
+                <div class="photocont row">
                     <div class="row">
                         <h1 class="d-flex justify-content-between align-items-center">
                             News
@@ -645,22 +660,37 @@
                             <div class="col-md-12">
                                 <div id="news-slider" class="owl-carousel">
                                     {{-- cadre1 --}}
-                                    @foreach($newsItems as $item)
-                                    <div class="post-slide">
-                                        <div class="post-img">
-                                            <img src="{{ Storage::url($item->file_path) }}"
-                                                alt="">
-                                            <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
+                                    @foreach ($newsItems as $item)
+                                        <div class="post-slide">
+                                            <div class="post-img">
+                                                <img src="{{ Storage::url($item->file_path) }}" alt="">
+                                                <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
+                                            </div>
+                                            <div class="post-content">
+                                                <h3 class="post-title">
+                                                    <a href="#">{{ $item->title }}</a>
+                                                </h3>
+                                                <p class="post-description">{{ $item->text }}</p>
+                                                <div>
+                                                    <span class="post-date">
+                                                        <i
+                                                            class="fa fa-clock-o"></i>{{ $item->created_at->format('M d, Y') }}
+                                                    </span>
+                                                    <div id="wrapper" class="mt-2">
+                                                        <form action="{{ route('sendMail') }}" method="POST">
+                                                            @csrf
+                                                            <select name="memberId" class="form-control">
+                                                                @foreach ($members as $member)
+                                                                    <option value="{{ $member->id }}">{{ $member->email }}</option>
+                                                                @endforeach
+                                                            </select>
+                                                            <button type="submit" class="btn btn-primary">Send</button>
+                                                        </form>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="post-content">
-                                            <h3 class="post-title">
-                                                <a href="#">{{ $item->title }}</a>
-                                            </h3>
-                                            <p class="post-description">{{ $item->text }}</p>
-                                            <span class="post-date"><i class="fa fa-clock-o"></i>{{ $item->created_at->format('M d, Y') }}</span>
-                                            <a href="#" class="read-more">read more</a>
-                                        </div>
-                                    </div>
                                     @endforeach
                                 </div>
                             </div>
@@ -671,23 +701,265 @@
             </div>
         </div>
     </div>
+    {{-- script de select --}}
+    <script>
+        (function($) {
 
-<script>
-    $(document).ready(function () {
-  $("#news-slider").owlCarousel({
-    items: 3,
-    itemsDesktop: [1199, 3],
-    itemsDesktopSmall: [980, 2],
-    itemsMobile: [600, 1],
-    navigation: true,
-    navigationText: ["", ""],
-    pagination: true,
-    autoPlay: true
-  });
-});
-</script>
+            $.fn.select3 = function(options) {
+                var dataItems = [];
+                var selectorID = '#' + this.attr('id');
 
-    
+                $(selectorID).find('option').each(function(index, element) {
+
+                    if (element.text != '') {
+                        dataItems.push(element.text.trim());
+                    } else {
+                        dataItems.push(element.value.trim());
+                    }
+
+                });
+
+                var opts = $.extend({}, $.fn.select3.defaults, options);
+
+                var idDiv = this.attr('id') + 'searchSelect3';
+                var idInput = this.attr('id') + 'searchSelect3_Input';
+                var idClose = this.attr('id') + 'searchSelect3_Times';
+                var idDown = this.attr('id') + 'searchSelect3_Caret_Down';
+                var idList = this.attr('id') + 'searchSelect3_List';
+                var idListLi = this.attr('id') + 'searchSelect3_List_LI';
+
+                var selectorDiv = '#' + this.attr('id') + 'searchSelect3';
+                var selectorInput = '#' + this.attr('id') + 'searchSelect3_Input';
+                var selectorClose = '#' + this.attr('id') + 'searchSelect3_Times';
+                var selectorDown = '#' + this.attr('id') + 'searchSelect3_Caret_Down';
+                var selectorList = '#' + this.attr('id') + 'searchSelect3_List';
+                var selectorListLi = '#' + this.attr('id') + 'searchSelect3_List_LI';
+
+                var buildELement = $('<div class="searchSelect3" id="' + idDiv +
+                    '" style="position:relative;"><input class="searchSelect3_Input" placeholder="' + opts
+                    .placeholder + '" value="' + opts.defaultvalue + '" id="' + idInput +
+                    '"><span class="fa fa-times searchSelect3_Times" id="' + idClose +
+                    '"></span><span class="fa fa-caret-down searchSelect3_Caret_Down" id="' + idDown +
+                    '"></span></div>');
+
+                if ($(selectorDiv).length > 0) {
+                    $(selectorDiv).remove();
+                }
+
+                this.after(buildELement);
+
+                if (opts.width > 0) {
+                    $(selectorInput).css('width', opts.width);
+                    $(selectorDown).css('left', (opts.width - 20));
+                    $(selectorClose).css('left', (opts.width - 40));
+                }
+
+
+                var cache = {};
+                var drew = false;
+                this.hide();
+
+
+
+                $(document).on('click', function(e) {
+                    //untuk menghilangkan list saat unfocus
+                    if ($(e.target).parent().is("li[id*='" + idListLi + "']") == false) {
+                        if ($(e.target).attr('id') != idInput && $(e.target).attr('id') != idDown) {
+                            $(selectorList).empty();
+                            $(selectorList).css('z-index', -1);
+                            $(selectorClose).hide();
+                        }
+                    }
+
+
+
+                });
+
+
+
+
+                var showList = function(query, valuee) {
+
+
+
+                    //Check if we've searched for this term before
+                    if (query in cache) {
+                        results = cache[query];
+                    } else {
+                        //Case insensitive search for our people array
+                        var results = $.grep(dataItems, function(item) {
+                            return item.search(RegExp(query, "i")) != -1;
+                        });
+
+                        //Add results to cache
+                        cache[query] = results;
+                    }
+
+                    //First search
+                    $(selectorList).css('z-index', opts.zIndex);
+
+
+                    if (drew == false) {
+                        //Create list for results
+                        $(selectorInput).after('<ul id="' + idList +
+                            '" class="searchSelect3_List" style="z-index:' + opts.zIndex + '"></ul>');
+
+                        if (opts.width > 0) {
+
+                            $(selectorList).css('width', opts.width);
+
+                        }
+
+                        if (opts.widthList > 0) {
+                            $(selectorList).css('width', opts.widthList);
+                        }
+
+                        //Prevent redrawing/binding of list
+                        drew = true;
+
+                        //Bind click event to list elements in results
+                        $(selectorList).on("click", "li", function() {
+                            var nilai = $(this).text()
+                            $(selectorInput).val(nilai);
+                            $(selectorID).val(nilai);
+                            $(selectorList).empty();
+                            $(selectorClose).show();
+                            $(selectorList).css('z-index', -1);
+                            $(selectorID).change();
+                        });
+
+
+                    }
+                    //Clear old results
+                    else {
+                        $(selectorList).empty();
+                    }
+
+                    var counter = 0;
+                    //Add results to the list
+                    for (term in results) {
+                        counter++;
+                        $(selectorList).append("<li id=" + idListLi + counter + "><label>" + results[term] +
+                            "</label></li>");
+                    }
+
+
+
+
+                };
+
+
+
+                $(selectorInput).on('click', function(e) {
+                    var query = $(this).val();
+
+                    showList('', query);
+
+
+                    $(selectorClose).hide();
+                    if (query.length > 0) {
+                        $(selectorClose).show();
+                    }
+
+                });
+
+                $(selectorInput).on('keyup', function(e) {
+                    $(selectorList).empty();
+                    var query = $(selectorInput).val();
+                    showList(query, query);
+
+                    $(selectorClose).hide();
+                    if (query.length > 0) {
+                        $(selectorClose).show();
+                    }
+
+                    $(selectorID).change();
+                });
+
+                //bila key tab di tekan maka akan pindah ke DOM lain, maka dari itu mesti di HIDE LIST nya
+                $(selectorInput).on('keydown', function(e) {
+                    if (e.which == 9) {
+                        $(selectorList).empty();
+                        $(selectorList).css('z-index', -1);
+                        $(selectorClose).hide();
+                    }
+                });
+
+                $(selectorDown).on('click', function(e) {
+                    var query = $(this).val();
+                    if ($(selectorList).find('li').length == 0) {
+                        showList('', query);
+                    } else {
+                        //$(selectorList).css('z-index', -1);
+                        $(selectorList).empty();
+                        $(selectorList).css('z-index', -1);
+                    }
+
+                    $(selectorClose).hide();
+                    if (query.length > 0) {
+                        $(selectorClose).show();
+                    }
+
+                });
+
+                $(selectorClose).on('click', function(e) {
+                    $(selectorInput).val('');
+                    $(selectorClose).hide();
+                    $(selectorID).change();
+
+                });
+
+
+                return this;
+            };
+
+            $.fn.select3.defaults = {
+                placeholder: "",
+                zIndex: 1,
+                defaultvalue: "",
+                width: 0,
+                widthList: 0
+            };
+
+        }(jQuery));
+        /* END select3.js */
+
+
+        $(document).ready(function(e) {
+
+            $('#selectBankList').select3({
+                width: 260,
+                placeholder: 'Pilih Metode Pelunasan',
+                zIndex: 100
+            });
+
+            $('#selectDescription').select3({
+                width: 400,
+                placeholder: 'Pilih Description',
+                zIndex: 100,
+                widthList: 800
+            });
+
+
+        });
+    </script>
+    {{-- script de select --}}
+    <script>
+        $(document).ready(function() {
+            $("#news-slider").owlCarousel({
+                items: 3,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [980, 2],
+                itemsMobile: [600, 1],
+                navigation: true,
+                navigationText: ["", ""],
+                pagination: true,
+                autoPlay: true
+            });
+        });
+    </script>
+
+
 
     <script>
         $("#file-upload").css("opacity", "0");
