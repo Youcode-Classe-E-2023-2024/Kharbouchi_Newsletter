@@ -21,6 +21,8 @@ class MemberSelectedMail extends Mailable
     public function build()
     {
         return $this->view('emails.memberSelected')
-                    ->with(['email' => $this->member->email]);
+                    ->with([
+                        'item' => $this->member // Assurez-vous que $this->member contient les informations que vous voulez afficher
+                    ]);
     }
 }
