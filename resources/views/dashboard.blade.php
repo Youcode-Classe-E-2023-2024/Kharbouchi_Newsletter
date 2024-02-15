@@ -52,7 +52,6 @@
 
             display: flex;
             justify-content: center;
-            /* Centre horizontalement */
             align-items: center;
 
         }
@@ -679,12 +678,14 @@
                                                     <div id="wrapper" class="mt-2">
                                                         <form action="{{ route('sendMail') }}" method="POST">
                                                             @csrf
-                                                            <select name="memberId" class="form-control">
-                                                                @foreach ($members as $member)
-                                                                    <option value="{{ $member->id }}">{{ $member->email }}</option>
-                                                                @endforeach
-                                                            </select>
-                                                            <button type="submit" class="btn btn-primary">Send</button>
+                                                            <div class="d-flex align-items-center">
+                                                                <select name="memberId" class="form-control mr-2" style="background-color: white;">
+                                                                    @foreach ($members as $member)
+                                                                        <option value="{{ $member->id }}">{{ $member->email }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                                <button type="submit" class="btn btn-primary">Send</button>
+                                                            </div>
                                                         </form>
                                                         
                                                     </div>
