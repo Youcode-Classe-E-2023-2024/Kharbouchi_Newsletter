@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+ 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MemberSelectedMail;
 use Illuminate\Http\Request;
 use App\Models\Member; 
 
@@ -38,5 +40,11 @@ class MemberController extends Controller
     
         return back()->with('success', 'Les utilisateurs sélectionnés ont été supprimés.');
     }
-    
+    public function sendMail(Request $request)
+{
+    $member = Member::findOrFail($request->memberId);
+    Mail::to($member->email)->send(new MemberSelectedMail($member));
+
+    return back()->with('success', 'Email sent successfully!');
+}
 }

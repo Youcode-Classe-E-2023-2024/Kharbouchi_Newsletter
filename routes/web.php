@@ -57,3 +57,7 @@ Route::delete('/member/delete/{id}', [MemberController::class, 'delete'])->name(
 Route::post('/upload', [UploadController::class, 'store']);
 
 
+Route::post('/send-mail', [MemberController::class, 'sendMail'])->name('sendMail');
+
+
+
