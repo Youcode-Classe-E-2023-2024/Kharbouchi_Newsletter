@@ -231,32 +231,32 @@
         }
     </style>
 </head>
+
 <body>
     <div id="news-slider" class="owl-carousel">
         {{-- cadre1 --}}
-       
-            <div class="post-slide {$item}">
-                <div class="post-img">
-                    <img src="{{ Storage::url($item->file_path) }}" alt="">
-                    <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
-                </div>
-                <div class="post-content ">
-                    <h3 class="post-title">
-                        <a href="#">{{ $item->title }}</a>
-                    </h3>
-                    <p class="post-description">{{ $item->text }}</p>
-                    <div>
-                        <span class="post-date">
-                            <i
-                                class="fa fa-clock-o"></i>{{ $item->created_at->format('M d, Y') }}
-                        </span>
-                        <div id="wrapper" class="mt-2">
 
-                        </div>
+        <div class="post-slide {$item}">
+            <div class="post-img">
+                <img src="{{ Storage::url($item->file_path) }}" alt="">
+                <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
+            </div>
+            <div class="post-content ">
+                <h3 class="post-title">
+                    <a href="#">{{ $item->title }}</a>
+                </h3>
+                <p class="post-description">{{ $item->text }}</p>
+                <div>
+                    <span class="post-date">
+                        <i class="fa fa-clock-o"></i>{{ $item->created_at->format('M d, Y') }}
+                    </span>
+                    <div id="wrapper" class="mt-2">
+
                     </div>
                 </div>
             </div>
-
+        </div>
     </div>
 </body>
+
 </html>
