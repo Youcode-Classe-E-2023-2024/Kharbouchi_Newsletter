@@ -660,12 +660,12 @@
                                 <div id="news-slider" class="owl-carousel">
                                     {{-- cadre1 --}}
                                     @foreach ($newsItems as $item)
-                                        <div class="post-slide">
+                                        <div class="post-slide {$item}">
                                             <div class="post-img">
                                                 <img src="{{ Storage::url($item->file_path) }}" alt="">
                                                 <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
                                             </div>
-                                            <div class="post-content">
+                                            <div class="post-content ">
                                                 <h3 class="post-title">
                                                     <a href="#">{{ $item->title }}</a>
                                                 </h3>
@@ -684,7 +684,7 @@
                                                                         <option value="{{ $member->id }}">{{ $member->email }}</option>
                                                                     @endforeach
                                                                 </select>
-                                                                <button type="submit" class="btn btn-primary">Send</button>
+                                                                <button onclick="" type="submit" class="btn btn-primary">Send</button>
                                                             </div>
                                                         </form>
                                                         

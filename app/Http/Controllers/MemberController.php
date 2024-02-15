@@ -43,6 +43,7 @@ class MemberController extends Controller
     public function sendMail(Request $request)
     {
         $member = Member::findOrFail($request->input('memberId'));
+
         Mail::to($member->email)->send(new MemberSelectedMail($member));
     
         return back()->with('success', 'Email sent successfully!');
