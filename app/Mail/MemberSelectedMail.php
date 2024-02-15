@@ -9,8 +9,6 @@ use App\Models\Member;
 
 class MemberSelectedMail extends Mailable
 {
-    use Queueable, SerializesModels;
-
     public $member;
 
     public function __construct(Member $member)
@@ -21,8 +19,7 @@ class MemberSelectedMail extends Mailable
     public function build()
     {
         return $this->view('emails.memberSelected')
-                    ->with([
-                        'item' => $this->member // Assurez-vous que $this->member contient les informations que vous voulez afficher
-                    ]);
+                    ->with(['item' => $this->member]); // Assurez-vous que la vue utilise 'item' pour afficher les données
     }
 }
+
