@@ -6,6 +6,7 @@ use App\Models\Member;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use App\Models\Update; 
 
 class AuthController extends Controller
 {
@@ -46,7 +47,9 @@ class AuthController extends Controller
     {
         $users = User::all(); 
         $members = Member::all();
-        return view('dashboard', compact('users', 'members'));
+        $newsItems = Update::latest()->get(); 
+      
+        return view('dashboard', compact('users', 'members','newsItems'));
     }
     public function logout(Request $request)
     {

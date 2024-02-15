@@ -19,7 +19,7 @@ Route::post('/login', [AuthController::class, 'signinPost'])->name('signin');
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/admin', [AuthController::class, 'showUsers'])->name('admin.dashboard');
+// Route::get('/admin', [AuthController::class, 'showUsers'])->name('admin.dashboard');
 
 
 
@@ -34,7 +34,7 @@ Route::get('/reset-password/{token}', [ForgotPassword::class, 'resetPassword'])-
 
 Route::post('/reset-password', [ForgotPassword::class, 'resetPasswordPost'])->name('reset.password.post');
 
-Route::get('/admin', [MemberController::class, 'showMembers'])->name('admin.dashboard');
+// Route::get('/admin', [MemberController::class, 'showMembers'])->name('admin.dashboard');
 Route::get('/admin', [AuthController::class, 'showDashboard'])->name('admin.dashboard');
 
 
