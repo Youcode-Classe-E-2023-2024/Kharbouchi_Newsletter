@@ -90,7 +90,7 @@
                 </h3>
                 <p class="post-description">{{ $item->text }}</p>
                 <span class="post-date"><i class="fa fa-clock-o"></i>{{ $item->created_at->format('M d, Y') }}</span>
-                <a href="#" class="read-more">télécharger PDF</a>
+                <a href="#" class="read-more">Télécharger PDF</a>
             </div>
         </div>
         <!-- Add more post slides as needed -->

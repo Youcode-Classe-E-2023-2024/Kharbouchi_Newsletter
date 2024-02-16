@@ -7,6 +7,9 @@ use App\Http\Controllers\PasswordForgotController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\khawlaemail;
+// email shit
+Route::post('/send-div-content', [khawlaemail::class, 'sendDivContent']);
 
 Route::get('/home', function () {
     return view('home');

@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('assets/css/styles.min.css') }}" />
@@ -48,7 +49,7 @@
         }
     </style>
     <style>
-        #wrapper {
+        .wrapper {
 
             display: flex;
             justify-content: center;
@@ -660,48 +661,80 @@
                                 <div id="news-slider" class="owl-carousel">
                                     {{-- cadre1 --}}
                                     @foreach ($newsItems as $item)
-                                        <div class="post-slide {$item}">
+                                    <div class=" ">
+                                        <div class="{{ 'item-' . $item->id }} post-slide">
                                             <div class="post-img">
                                                 <img src="{{ Storage::url($item->file_path) }}" alt="">
                                                 <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
                                             </div>
-                                            <div class="post-content ">
+                                            <div class="post-content">
                                                 <h3 class="post-title">
-                                                    <a href="#">{{ $item->title }}</a>
+                                                    <a href="#" style="background-color: #000000">{{ $item->title }}</a>
                                                 </h3>
                                                 <p class="post-description">{{ $item->text }}</p>
                                                 <div>
                                                     <span class="post-date">
-                                                        <i
-                                                            class="fa fa-clock-o"></i>{{ $item->created_at->format('M d, Y') }}
+                                                        <i class="fa fa-clock-o"></i>{{ $item->created_at->format('M d, Y') }}
                                                     </span>
-                                                    <div id="wrapper" class="mt-2">
-                                                        <form action="{{ route('sendMail') }}" method="POST">
-                                                            @csrf
-                                                            <div class="d-flex align-items-center">
-                                                                <select name="memberId" class="form-control mr-2" style="background-color: white;">
-                                                                    @foreach ($members as $member)
-                                                                        <option value="{{ $member->id }}">{{ $member->email }}</option>
-                                                                    @endforeach
-                                                                </select>
-                                                                <button onclick="" type="submit" class="btn btn-primary">Send</button>
-                                                            </div>
-                                                        </form>
-                                                        
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="wrapper mt-2">
+                                            {{-- <form action="{{ route('sendMail') }}" method="POST">
+                                                @csrf --}}
+                                                <div class="d-flex align-items-center">
+                                                    <select name="memberId" class="form-control mr-2 option-{{ $item->id }}" style="background-color: white;">
+                                                        @foreach ($members as $member)
+                                                            <option value="{{ $member->id }}">{{ $member->email }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    <button onclick="senddivviaemail({{ $item->id }})" type="button" class="btn btn-primary">Send</button>
+                                                </div>
+                                            {{-- </form> --}}
+                                            
+                                        </div>
+                                    </div>
                                     @endforeach
                                 </div>
+                            
                             </div>
                         </div>
                     </div>
+                    
                 </div>
 
             </div>
         </div>
     </div>
+    <script>
+        function senddivviaemail(element){
+            let selectElement = document.querySelector(".option-" + element);
+
+// Get the selected option element
+let selectedOption = selectElement.options[selectElement.selectedIndex];
+
+// Get the text content of the selected option
+let selectedOptionText = selectedOption.textContent;
+
+console.log(selectedOptionText);
+            console.log(document.querySelector(".item-" + element).innerHTML);
+
+            fetch('/send-div-content', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content') // CSRF token for Laravel
+            },
+            body: JSON.stringify({ htmlContent: document.querySelector(".item-" + element).innerHTML , email: selectedOptionText })
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+            
+        }
+    </script>
     {{-- script de select --}}
     <script>
         (function($) {
