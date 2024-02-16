@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('assets/css/styles.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/journal.css') }}" />
+
     <style>
-        .upload-container {
+                .upload-container {
             background-color: rgb(239, 239, 239);
             border-radius: 6px;
             padding: 10px;
@@ -47,8 +48,6 @@
             color: #95afc0;
             opacity: 0.55;
         }
-    </style>
-    <style>
         .wrapper {
 
             display: flex;
@@ -67,39 +66,12 @@
             align-items: center;
         }
 
-
-        .post-slide {
-            width: 400px;
-            height: 400px;
-            background: #fff;
-            margin: 20px 15px 20px;
-            border-radius: 15px;
-            padding-top: 1px;
-            box-shadow: 0px 14px 22px -9px #bbd8f0;
-        }
-
         #selectBankList {
             display: block;
             background: #fff;
             margin: 0 auto;
             width: 50%;
         }
-
-        .post-slide .post-img {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            margin: -12px 15px 8px 15px;
-            margin-left: -10px;
-        }
-
-        .post-slide .post-img img {
-            width: 400px;
-            height: 200px;
-            transform: scale(1, 1);
-            transition: transform 0.2s linear;
-        }
-
         .post-slide:hover .post-img img {
             transform: scale(1.1, 1.1);
         }
@@ -130,43 +102,9 @@
             color: #ffffff;
             font-size: 25px;
         }
-
-        .post-slide .post-content {
-            background: #24ccffbf;
-            padding: 2px 20px 40px;
-            border-radius: 15px;
-            height: 200px;
-        }
-
-        .post-slide .post-title a {
-            font-size: 15px;
-            font-weight: bold;
-            color: #000000;
-            display: inline-block;
-            text-transform: uppercase;
-            transition: all 0.3s ease 0s;
-        }
-
         .post-slide .post-title a:hover {
             text-decoration: none;
             color: #3498db;
-        }
-
-        .post-slide .post-description {
-            line-height: 24px;
-            color: #000000;
-            margin-bottom: 25px;
-        }
-
-        .post-slide .post-date {
-            color: #000000;
-            font-size: 14px;
-        }
-
-        .post-slide .post-date i {
-            font-size: 20px;
-            margin-right: 8px;
-            color: #cfdace;
         }
 
         .post-slide .read-more {
@@ -573,7 +511,7 @@
                         <h1 class="d-flex justify-content-between align-items-center">
                             News
                             <!-- Bouton modifié pour déclencher le modal -->
-                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                            <button type="button" class="btn btn-primary btn-lg" style="background: #ed8b03" data-toggle="modal"
                                 data-target="#flipFlop">Add News</button>
                         </h1>
 
@@ -663,20 +601,49 @@
                                     {{-- cadre1 --}}
                                     @foreach ($newsItems as $item)
                                         <div class=" ">
-                                            <div class="{{ 'item-' . $item->id }} post-slide">
-                                                <div class="post-img">
-                                                    <img src="{{ Storage::url($item->file_path) }}" alt="">
+                                            <div class="{{ 'item-' . $item->id }} post-slide"
+                                                style="            width: 400px;
+                                                height: 400px;
+                                                background: #fff;
+                                                margin: 20px 15px 20px;
+                                                border-radius: 15px;
+                                                padding-top: 1px;
+                                                box-shadow: 0px 14px 22px -9px #bbd8f0;">
+                                                <div class="post-img"
+                                                    style="            position: relative;
+                                                overflow: hidden;
+                                                border-radius: 10px;
+                                                margin: -12px 15px 8px 15px;
+                                                margin-left: -10px;">
+                                                    <img src="{{ Storage::url($item->file_path) }}" alt=""
+                                                        style=" width: 400px;
+                                                    height: 200px;
+                                                    transform: scale(1, 1);
+                                                    transition: transform 0.2s linear; ">
                                                     <a href="#" class="over-layer"><i
                                                             class="fa fa-link"></i></a>
                                                 </div>
-                                                <div class="post-content">
+                                                <div class="post-content" style="background: #ed8b03;
+                                                padding: 2px 20px 40px;
+                                                border-radius: 15px;
+                                                height: 200px;">
                                                     <h3 class="post-title">
-                                                        <a href="#">{{ $item->title }}</a>
+                                                        <a href="#" style="            font-size: 15px;
+                                                        font-weight: bold;
+                                                        color: #000000;
+                                                        display: inline-block;
+                                                        text-transform: uppercase;
+                                                        transition: all 0.3s ease 0s;">{{ $item->title }}</a>
                                                     </h3>
-                                                    <p class="post-description">{{ $item->text }}</p>
+                                                    <p class="post-description" style=" line-height: 24px;
+                                                    color: #000000;
+                                                    margin-bottom: 25px;">{{ $item->text }}</p>
                                                     <div>
-                                                        <span class="post-date">
-                                                            <i
+                                                        <span class="post-date" style="color: #000000;
+                                                        font-size: 14px;">
+                                                            <i style="font-size: 20px;
+                                                            margin-right: 8px;
+                                                            color: #cfdace;"
                                                                 class="fa fa-clock-o"></i>{{ $item->created_at->format('M d, Y') }}
                                                         </span>
                                                     </div>
@@ -713,7 +680,7 @@
             </div>
         </div>
     </div>
-{{---------- script de envoyer email avec div  ---------}}
+    {{-- -------- script de envoyer email avec div  ------- --}}
     <script>
         function senddivviaemail(element) {
             let selectElement = document.querySelector(".option-" + element);
@@ -747,7 +714,7 @@
 
         }
     </script>
-{{---------------------------------------------}}    
+    {{-- ----------------------------------------- --}}
     {{-- script de select --}}
     <script>
         (function($) {
@@ -990,7 +957,7 @@
 
         });
     </script>
-{{----------------------------------------------}}
+    {{-- ------------------------------------------ --}}
     <script>
         $(document).ready(function() {
             $("#news-slider").owlCarousel({
