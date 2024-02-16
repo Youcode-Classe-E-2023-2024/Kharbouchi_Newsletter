@@ -11,6 +11,9 @@ use App\Http\Controllers\khawlaemail;
 // email shit
 Route::post('/send-div-content', [khawlaemail::class, 'sendDivContent']);
 
+Route::get('/', function () {
+    return view('home');
+})->name('home');
 Route::get('/home', function () {
     return view('home');
 })->name('home');
