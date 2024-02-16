@@ -346,7 +346,8 @@
                     <div class="alert alert-success alert-dismissible d-flex align-items-center fade show">
                         <i class="bi-check-circle-fill"></i>
                         <strong class="mx-2">Success!</strong> {{ session('success') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                            aria-label="Close"></button>
                     </div>
                 @endif
 
@@ -661,80 +662,92 @@
                                 <div id="news-slider" class="owl-carousel">
                                     {{-- cadre1 --}}
                                     @foreach ($newsItems as $item)
-                                    <div class=" ">
-                                        <div class="{{ 'item-' . $item->id }} post-slide">
-                                            <div class="post-img">
-                                                <img src="{{ Storage::url($item->file_path) }}" alt="">
-                                                <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
-                                            </div>
-                                            <div class="post-content">
-                                                <h3 class="post-title">
-                                                    <a href="#" style="background-color: #000000">{{ $item->title }}</a>
-                                                </h3>
-                                                <p class="post-description">{{ $item->text }}</p>
-                                                <div>
-                                                    <span class="post-date">
-                                                        <i class="fa fa-clock-o"></i>{{ $item->created_at->format('M d, Y') }}
-                                                    </span>
+                                        <div class=" ">
+                                            <div class="{{ 'item-' . $item->id }} post-slide">
+                                                <div class="post-img">
+                                                    <img src="{{ Storage::url($item->file_path) }}" alt="">
+                                                    <a href="#" class="over-layer"><i
+                                                            class="fa fa-link"></i></a>
+                                                </div>
+                                                <div class="post-content">
+                                                    <h3 class="post-title">
+                                                        <a href="#">{{ $item->title }}</a>
+                                                    </h3>
+                                                    <p class="post-description">{{ $item->text }}</p>
+                                                    <div>
+                                                        <span class="post-date">
+                                                            <i
+                                                                class="fa fa-clock-o"></i>{{ $item->created_at->format('M d, Y') }}
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="wrapper mt-2">
-                                            {{-- <form action="{{ route('sendMail') }}" method="POST">
+                                            <div class="wrapper mt-2">
+                                                {{-- <form action="{{ route('sendMail') }}" method="POST">
                                                 @csrf --}}
                                                 <div class="d-flex align-items-center">
-                                                    <select name="memberId" class="form-control mr-2 option-{{ $item->id }}" style="background-color: white;">
+                                                    <select name="memberId"
+                                                        class="form-control mr-2 option-{{ $item->id }}"
+                                                        style="background-color: white;">
                                                         @foreach ($members as $member)
-                                                            <option value="{{ $member->id }}">{{ $member->email }}</option>
+                                                            <option value="{{ $member->id }}">{{ $member->email }}
+                                                            </option>
                                                         @endforeach
                                                     </select>
-                                                    <button onclick="senddivviaemail({{ $item->id }})" type="button" class="btn btn-primary">Send</button>
+                                                    <button onclick="senddivviaemail({{ $item->id }})"
+                                                        type="button" class="btn btn-primary">Send</button>
                                                 </div>
-                                            {{-- </form> --}}
-                                            
+                                                {{-- </form> --}}
+
+                                            </div>
                                         </div>
-                                    </div>
                                     @endforeach
                                 </div>
-                            
+
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
 
             </div>
         </div>
     </div>
+{{---------- script de envoyer email avec div  ---------}}
     <script>
-        function senddivviaemail(element){
+        function senddivviaemail(element) {
             let selectElement = document.querySelector(".option-" + element);
 
-// Get the selected option element
-let selectedOption = selectElement.options[selectElement.selectedIndex];
+            // Get the selected option element
+            let selectedOption = selectElement.options[selectElement.selectedIndex];
 
-// Get the text content of the selected option
-let selectedOptionText = selectedOption.textContent;
+            // Get the text content of the selected option
+            let selectedOptionText = selectedOption.textContent;
 
-console.log(selectedOptionText);
+            console.log(selectedOptionText);
             console.log(document.querySelector(".item-" + element).innerHTML);
 
             fetch('/send-div-content', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content') // CSRF token for Laravel
-            },
-            body: JSON.stringify({ htmlContent: document.querySelector(".item-" + element).innerHTML , email: selectedOptionText })
-        })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-            
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
+                            'content') // CSRF token for Laravel
+                    },
+                    body: JSON.stringify({
+                        htmlContent: document.querySelector(".item-" + element).innerHTML,
+                        email: selectedOptionText
+                    })
+                })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+
         }
     </script>
+{{---------------------------------------------}}    
     {{-- script de select --}}
     <script>
         (function($) {
@@ -977,7 +990,7 @@ console.log(selectedOptionText);
 
         });
     </script>
-    {{-- script de select --}}
+{{----------------------------------------------}}
     <script>
         $(document).ready(function() {
             $("#news-slider").owlCarousel({
