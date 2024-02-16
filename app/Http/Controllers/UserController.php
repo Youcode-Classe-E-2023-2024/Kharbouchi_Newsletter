@@ -19,6 +19,7 @@ class UserController extends Controller
         }
     
         return back()->with('success', 'Les rôles ont été mis à jour.');
+
     }
     
 }
